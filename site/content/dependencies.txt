@@ -1,0 +1,29 @@
+---
+Project Dependencies
+---
+h1. Dependencies
+
+The version number specified here are the ones that tested against and for reference only.
+BuildMaster uses only basic published API from the library so it should not have much compatibility issue.
+Feel free to provide any feedback if you run into any issue.
+
+h1. Cotta
+
+Cotta module uses the classes that comes with the ruby core for file operations, RubyGem for archiving and ZLib for
+file compression.
+
+|_.Name|_.Version|_.Description|
+|"RubGem":http://www.rubygems.org/|ruby-1.8.5|Creating archive and extracting archive|
+|"ZLib":http://www.ruby-doc.org/stdlib/libdoc/zlib/rdoc/index.html|ruby-1.8.5|Compressing and decompressing file|
+
+h1. Project Building
+
+You will need to install the programs (CVS, SVN, ANT) and set your PATH evironment variables.
+
+h1. Site Building
+
+|_.Name|_.Version|_.Description|
+|"BlueCloth":http://bluecloth.rubyforge.org|1.0.0|Markdown engine to generate XHTML file|
+|"RedCloth":http://www.whytheluckystiff.net/ruby/redcloth/|3.0.4|Textile file engine to generate XHTML file|
+|"Watir":http://wtr.rubyforge.org/|1.4.1|Web site link testing|
+|"WEBrick":http://www.webrick.org/|ruby-1.8.5|Embedded HTTP server engine|

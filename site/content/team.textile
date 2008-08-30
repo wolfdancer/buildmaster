@@ -1,0 +1,11 @@
+---------------------------------------
+Team
+---------------------------------------
+h1. The Developers
+
+|_.name|_.id|_.email|_.organization|_.website|
+|Shane Duan|wolfdancer|n/a|n/a|"shaneduan.com":http://www.shaneduan.com|
+
+h1. The Contributors
+
+Nat Pryce for the original idea, as in "Project History":history.html

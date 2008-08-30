@@ -1,0 +1,36 @@
+---
+Cotta Classes
+---
+h1. API Classes
+
+<template:code source="classes.rb" tag="cotta" syntax="ruby"/>
+
+* "Cotta":../rdoc/classes/BuildMaster/Cotta.html: The factory class that is backed by "different systems":#systems and
+also handles the "shell":#shell processing.
+* "CottaFile":../rdoc/classes/BuildMaster/CottaFile.html: The class that represents the file in the system.
+* "CottaDiretory":../rdoc/classes/BuildMaster/Cotta.html: The class that represents the directory in the system
+
+<a name="systems"> </a>
+h1. Different Systems
+
+Cotta objects can be backed by InMemroySystem and PhysicalSystem.
+
+h2. BuildMaster::InMemorySystem
+
+<template:code source="classes.rb" tag="in memory" syntax="ruby"/>
+InMemorySystem is the one that saves everything in the memory so that it does not depend on your local file
+system and does not require clean up.
+
+h2. BuildMaster::PhysicalSystem
+
+PhylicalSystem is the default system used by Cotta.  It delegates all the operations into the ruby file classes like
+@File@, @FileUtil@ and @FileTest@
+
+h1. Shell
+
+You can use "Cotta":../rdoc/classes/BuildMaster/Cotta.html to help you handle launching programs through the @shell@ method.  It will check the return
+value of the program automatically and throw exception if it exits with a value other than 0.
+
+If a block is provided, it will be called with the io to the program.  If not, the output will be recorded and returned
+upon finish of the program.  So if it is a program that will generate lots of output, make sure that you provide an IO
+handler

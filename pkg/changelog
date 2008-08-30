@@ -1,0 +1,7 @@
+libbuildmaster-ruby (0.9.1) unstable; urgency=low
+
+  * First stab at packaging via debian
+  * still not clear on how to generate these in such a way that we can build a release package from cruise
+  * blah blah blah
+
+ -- Julian Simpson <jsimpson@thoughtworks.com>  Mon, 04 Dec 2006 14:38:27 +0000

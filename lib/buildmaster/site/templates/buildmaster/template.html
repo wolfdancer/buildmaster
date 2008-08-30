@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:template="http://buildmaster.rubyforge.org/xtemplate/1.0">
+  <head>
+    <title>BuildMaster - <template:include elements="/html/head/title/text()"/></title>
+    <link rel="stylesheet" type="text/css" media="all"><template:href url="buildmaster.css"/></link>
+    <link rel="stylesheet" type="text/css" media="print"><template:href url="print.css"/></link>
+    <link rel="stylesheet" type="text/css" media="all"><template:href url="ruby.css"/></link>
+    <template:include elements="/html/head/*[not(name()='title')]"/>
+  </head>
+
+  <body>
+		<div class="header">
+			<a class="header">
+			  <template:href url="index.html"/>
+				<img id="logo" alt="BuildMaster"><template:href url="logo.gif"/></img>
+			</a>
+		</div>
+
+		<div class="left">
+      <div class="MenuGroup">
+        <h1>Software</h1>
+        <ul>
+          <li><template:link href="download.html">Download and Dependencies</template:link></li>
+          <li><a href="http://rubyforge.org/scm/?group_id=1680">Source Repository</a></li>
+          <li><template:link href="/license.html">Project License</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1><template:link href="docs/main.html">Documentation...</template:link></h1>
+        <ul>
+          <li><template:link href="getting-started.html">Getting Started</template:link></li>
+          <li><template:link href="release/release-project.html">Project Release</template:link></li>
+          <li><template:link href="docs/build-site.html">Site Building</template:link></li>
+          <li><template:link href="docs/tag-references.html">Tag References</template:link></li>
+          <li class="More"><a><template:href url="docs/main.html"/>More...</a></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1>User Support</h1>
+        <ul>
+          <li><a href="http://groups.google.com/group/buildmaster">Mailing List</a></li>
+          <li><a href="http://rubyforge.org/tracker/?group_id=1680">Issue Tracker</a></li>
+          <li><template:link href="/news-rss2.xml">News Feed (RSS 2.0)</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1>Development</h1>
+        <ul>
+          <li><template:link href="/road-map.html">Road Map</template:link></li>
+          <li><template:link href="/how-to-contribute.html">How to Contribute</template:link></li>
+          <li><template:link href="/team.html">Development Team</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1><template:link href="references.html">Related Sites</template:link></h1>
+        <ul>
+          <li><a href="http://www.pragmaticprogrammer.com/sk/auto/">Pragmatic Project Automation</a></li>
+          <li><a href="http://www.thoughtworks.com">Partially on ThoughtWorks beach</a></li>
+          <li class="More"><a><template:href url="references.html"/>More...</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <a href="http://rubyforge.org/projects/buildmaster/">
+        	<img alt="Rubyforge Logo" src="http://rubyforge.org/themes/osx/images/logohover.png" width="170"/>
+        </a>
+      </div>
+		</div>
+
+    <template:when test="index_file?">
+		<div class="right">
+        <div class="NewsGroup">
+          <h1>Latest Versions</h1>
+          <table>
+            <tr>
+              <td><template:link href="download.html#stable">Stable:</template:link></td>
+              <td><template:link href="download.html#stable"><template:text property="release"/></template:link></td>
+            </tr>
+            <tr>
+              <td><template:link href="download.html#prerelease">Prerelease:</template:link></td>
+              <td><template:link href="download.html#prerelease"><template:text property="prerelease"/></template:link></td>
+            </tr>
+            <tr>
+              <td><template:link href="download.html#snapshot">Snapshot:</template:link></td>
+              <td><template:link href="download.html#snapshot"><template:text property="snapshot"/></template:link></td>
+            </tr>
+          </table>
+          <p class="NewsMore"><template:link href="versioning.html">About BuildMaster version numbers...</template:link></p>
+        </div>
+        <div class="NewsGroup">
+        	<h1>Recent News</h1>
+				<template:each source="news-rss2.xml" select="/rss/channel/item" count="3">
+                <div class="NewsItem">
+                    <p class="NewsTitle"><template:include elements="./title/text()"/></p>
+                    <p class="NewsDate"><template:include elements="./pubDate/text()"/></p>
+                    <p class="NewsText"><template:include elements="./xhtml:div/node()"/></p>
+                </div>
+                </template:each>
+
+  			<p class="NewsMore"><template:link href="/news-rss2.xml">News feed (RSS 2.0)</template:link></p>
+				</div>
+		</div>
+		</template:when>
+
+		<div class="footer">
+      <div class="bottomshadow"/>
+  		<div class="poweredby">
+        Powered by <a href="http://buildmaster.rubyforge.org" class="footer">BuildMaster</a>
+		(version: <template:text property="buildmaster_version"/>)
+        -
+        <a href="http://rubyforge.org/tracker/?group_id=1680" class="footer">Bug/feature request</a>
+        -
+        <a href="http://groups.google.com/group/buildmaster" class="footer">Contact Administrators</a>
+        <br/>
+      </div>
+		</div>
+  </body>
+</html>

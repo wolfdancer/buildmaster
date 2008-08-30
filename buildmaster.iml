@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="RUBY_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/test/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntryProperties />
+  </component>
+  <component name="RModuleContentRootManager">
+    <TEST_URLS url="file://$MODULE_DIR$/test" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <RMODULE_SETTINGS_STORAGE_ID NAME="SHOULD_USE_RSPEC_TEST_FRAMEWORK" VALUE="true" />
+    <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="1" />
+    <RMODULE_SETTINGS_STORAGE_ID NAME="CHECKED0" VALUE="true" />
+    <RMODULE_SETTINGS_STORAGE_ID NAME="DIR0" VALUE="$MODULE_DIR$/lib/buildmaster" />
+  </component>
+</module>
+

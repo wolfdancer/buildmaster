@@ -1,0 +1,18 @@
+---------------------
+Download
+---------------------
+h1. Download and Install
+
+Release <template:text property="release"/> is a feature complete release.
+
+The easiest way would be to use "RubyGems":http://rubygems.rubyforge.org/ to download it by command
+
+<pre class="code">gem install BuildMaster</pre>
+
+Gem file and document are available (along with the source content) on the "project file list":http://rubyforge.org/frs/?group_id=1680.
+
+<a name="snapshot"> </a>
+h1. Development Snapshot
+
+The "Builds Directory":builds contains the latest build that are used for the field.
+

@@ -1,0 +1,152 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:template="http://buildmaster.rubyforge.org/xtemplate/1.0">
+  <head>
+    <title>BuildMaster - <template:include elements="/html/head/title/text()"/></title>
+    <link rel="stylesheet" type="text/css" media="all"><template:href url="buildmaster.css"/></link>
+    <link rel="stylesheet" type="text/css" media="print"><template:href url="print.css"/></link>
+    <link rel="stylesheet" type="text/css" media="all"><template:href url="ruby.css"/></link>
+    <template:include elements="/html/head/*[not(name()='title')]"/>
+  </head>
+
+  <body>
+		<div class="header">
+			<a class="header">
+			  <template:href url="index.html"/>
+				<img id="logo" alt="BuildMaster"><template:href url="logo.gif"/></img>
+			</a>
+		</div>
+
+		<div class="left">
+      <div class="MenuGroup">
+        <h1>Software</h1>
+        <ul>
+          <li><template:link href="download.html">Download</template:link></li>
+          <li><template:link href="dependencies.html"/>Dependencies</li>
+          <li><template:link href="/license.html">Project License</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1><template:link href="cotta/index.html">Cotta</template:link></h1>
+        <ul>
+          <li><template:link href="cotta/introduction.html">Introduction</template:link></li>
+          <li><template:link href="cotta/getting-started.html">Getting Started</template:link></li>
+          <li><template:link href="cotta/classes.html">References</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1><template:link href="project/index.html">Build and Release</template:link></h1>
+        <ul>
+          <li><template:link href="project/introduction.html">Introduction</template:link></li>
+          <li><template:link href="project/getting-started.html">Getting Started</template:link></li>
+          <li><template:link href="project/classes.html">References</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1><template:link href="site/index.html">Site Building</template:link></h1>
+        <ul>
+          <li><template:link href="site/introduction.html">Introduction</template:link></li>
+          <li><template:link href="site/getting-started.html">Getting Started</template:link></li>
+          <li><template:link href="site/tag-references.html">Tag References</template:link></li>
+          <li class="More"><a><template:href url="site/index.html"/>More...</a></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1>User Support</h1>
+        <ul>
+          <li><a href="http://groups.google.com/group/buildmaster">Mailing List</a></li>
+          <li><a href="http://rubyforge.org/tracker/?group_id=1680">Issue Tracker</a></li>
+          <li><template:link href="references.html">Other References</template:link></li>
+          <li><template:link href="/news-rss2.xml">News Feed (RSS 2.0)</template:link></li>
+        </ul>
+      </div>
+
+      <div class="MenuGroup">
+        <h1>Development</h1>
+        <ul>
+          <li><a href="http://rubyforge.org/scm/?group_id=1680">Source Repository</a></li>
+          <li><template:link href="/how-to-contribute.html">How to Contribute</template:link></li>
+          <li><template:link href="/team.html">Development Team</template:link></li>
+        </ul>
+      </div>
+
+      <div class="logo">
+        <a href="http://rubyforge.org/projects/buildmaster/">
+        	<img alt="Rubyforge Logo" src="http://rubyforge.org/themes/osx/images/logohover.png" width="170"/>
+        </a>
+      </div>
+		</div>
+
+    <template:when test="index_file?">
+		<div class="right">
+        <div class="NewsGroup">
+          <h1>Latest Versions</h1>
+          <table>
+            <tr>
+              <td><template:link href="download.html#stable">Stable:</template:link></td>
+              <td><template:link href="download.html#stable"><template:text property="release"/></template:link></td>
+            </tr>
+            <tr>
+              <td><template:link href="download.html#prerelease">Prerelease:</template:link></td>
+              <td><template:link href="download.html#prerelease"><template:text property="prerelease"/></template:link></td>
+            </tr>
+            <tr>
+              <td><template:link href="download.html#snapshot">Snapshot:</template:link></td>
+              <td><template:link href="download.html#snapshot"><template:text property="snapshot"/></template:link></td>
+            </tr>
+          </table>
+          <p class="NewsMore"><template:link href="http://rubygems.org/read/chapter/7">About Gem version numbers...</template:link></p>
+        </div>
+        <div class="NewsGroup">
+        	<h1>Recent News</h1>
+				<template:each source="news-rss2.xml" select="/rss/channel/item" count="3">
+                <div class="NewsItem">
+                    <p class="NewsTitle"><template:include elements="./title/text()"/></p>
+                    <p class="NewsDate"><template:include elements="./pubDate/text()"/></p>
+                    <p class="NewsText"><template:include elements="./xhtml:div/node()"/></p>
+                </div>
+                </template:each>
+
+  			<p class="NewsMore"><template:link href="/news-rss2.xml">News feed (RSS 2.0)</template:link></p>
+				</div>
+		</div>
+		</template:when>
+
+		<div>
+		  <template:attribute name="class" eval="center_class"/>
+		  <div class="content"><template:include elements="/html/body/*"/></div>
+		  <div class="source">
+		  	<a><template:attribute name="href" eval="doc_source_url"/>Document Source</a> 
+		  	(<a><template:attribute name="href" eval="doc_history_url"/>History</a>)
+		  </div>
+		</div>
+
+		<div class="footer">
+      <div class="bottomshadow"/>
+  		<div class="poweredby">
+        Powered by <a href="http://buildmaster.rubyforge.org" class="footer">BuildMaster</a>
+		(version: <template:text property="buildmaster_version"/>)
+        -
+        <a href="http://rubyforge.org/tracker/?group_id=1680" class="footer">Bug/feature request</a>
+        -
+        <a href="http://groups.google.com/group/buildmaster" class="footer">Contact Administrators</a>
+        <br/>
+      </div>
+		</div>
+    <div>
+	    <script language="JavaScript" type="text/javascript" src="http://www.webpasties.com/pastie.php?mode=tracker&tid=457&mid=44">
+	    </script>
+		</div>
+		<div>
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+_uacct = "UA-735422-3";
+urchinTracker();
+		</script>
+		</div>
+  </body>
+</html>

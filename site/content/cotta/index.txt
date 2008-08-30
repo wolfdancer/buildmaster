@@ -1,0 +1,13 @@
+---
+Cotta
+---
+h1. Cotta
+
+Following the idea of the original "Cotta Project":http://cotta.sourceforge.net/power.html, Cotta is a set of classes that wraps
+the existing file utility classes in a object oriented way.
+
+h1. Documents
+
+* "Introduction":introduction.html
+* "Getting Started":getting-started.html
+* "Full References":classes.html

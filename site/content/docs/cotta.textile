@@ -1,0 +1,39 @@
+-------------------
+Cotta
+-------------------
+h1. Concept
+
+Cotta is a set of classes that was ported from the 
+"Java implementation":http://cotta.sourceforge.net, and is currently part of BuildMaster, before its style
+becomes mainstream.
+
+For idea of Cotta, see "Cotta Power":http://cotta.sourceforge.net/power.html
+
+The following items are the main differences for Cotta:
+
+* File and directories are presented as CottaFile and CottaDirectory
+* Parent directories are created automatically when creating a file or directory
+* Children are deleted automatically when deleting a directory
+* More specific file operation names like load/save, read/write.
+
+h1. Code
+
+For those we just want to read one webpage to know the basics instead of read the "rDoc":../rdoc/index.html.
+
+h2. Instantiation
+
+You can instantiate a @CottaFile@ and @CottaDirectory@ by injecting different file system into @Cotta@.
+
+<template:code source="cotta-samples.rb" tag="create" syntax="ruby"/>
+
+h2. Simple Operations
+
+Basic file/directory supports are available.
+
+<template:code source="cotta-samples.rb" tag="ops" syntax="ruby" />
+
+h2. File Operations
+
+File operations follow the same behaviors of @File@ in ruby, except they are not static.
+
+<template:code source="cotta-samples.rb" tag="io" syntax="ruby" />

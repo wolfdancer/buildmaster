@@ -1,0 +1,260 @@
+<!--
+============================================================================================
+Before something better coming up that REALLY do a good job of simplifying setting up the
+build, here is what you can try.
+
+In this build file, all the properties that are specific to each project has been extracted
+out into a build.properties file.  The content of which is below.  In order to use it, these
+are the steps that you need to take
+1. Copy the content to build.properties file and change in according to your situation
+2. Copy the jar/xml/xsl file used for artifacts generation into the location where
+   config.artifacts.dir is pointing to.  The following is the table of the kind of artifacts
+   that this build file generates and the files that you need to generate them
+3. Turn off the generation of artifacts that you don't want
+
+==========================================================================================
+| Artifact              |  file name                                                     |
+|=======================|================================================================|
+| emma (code coverage)  | emma.jar, emma_ant.jar                                         |
+|=======================|================================================================|
+| checkstyle            | checkstyle.xml, checkstyle.xsl, checkstyle-all.jar             |
+|=======================|================================================================|
+| cpd                   | pmd.jar, jaxen-core.jar, saxpath.jar                           |
+|=======================|================================================================|
+| test report           | [none]                                                         |
+=========================================================================================|
+The file build.properties should contain all the properties that you might need to modify
+for your project.  Here is an example:
+
+############################################################################################
+# used for jar, source zip file name
+project.name=dbfixture
+
+# Basic source/test/library setup
+src.java.dir=src
+src.test.dir=test
+doc.dir=docs
+build.dir=build
+lib.build.dir=build
+lib.runtime.dir=lib
+
+# artifact will be generated here
+artifacts.dir=build/artifacts
+
+# files (xml, jar) related to artifacts generation
+config.artifacts.dir=config/artifacts
+
+# Emma (Code coverage) Related
+emma.threshold=class:81,method:68,block:58,line:60
+============================================================================================
+    -->
+<project name="dbfixture" default="war">
+    <property file="build.properties"/>
+
+    <property name="build.java.dir"   location="${build.dir}/java"/>
+    <property name="build.test.dir"   location="${build.dir}/test"/>
+
+    <property name="test.results.dir" location="${build.dir}/test-results"/>
+    <property name="artifacts.test.dir" location="${artifacts.dir}/test"/>
+
+    <property name="checkstyle.config.file" location="${config.artifacts.dir}/checkstyle.xml" />
+    <property name="checkstyle.xsl.dir" location="${config.artifacts.dir}" />
+    <property name="artifacts.checkstyle.dir" location="${artifacts.dir}/checkstyle" />
+
+    <property name="emma.instr.dir" location="${build.dir}/instr" />
+    <property name="artifacts.emma.dir" location="${artifacts.dir}/emma" />
+
+    <path id="classpath.runtime">
+        <fileset dir="${lib.runtime.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <path id="classpath.build">
+        <path refid="classpath.runtime"/>
+	<fileset dir="${lib.build.dir}">
+          <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <path id="emma.lib">
+      <fileset dir="${config.artifacts.dir}">
+        <include name="emma*.jar" />
+      </fileset>
+    </path>
+    <taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+
+    <property name="artifacts.duplication.dir" location="${artifacts.dir}/duplication" />
+
+
+    <target name="init">
+       <mkdir  dir="${artifacts.emma.dir}" />
+       <mkdir  dir="${artifacts.checkstyle.dir}" />
+       <mkdir  dir="${emma.instr.dir}" />
+       <mkdir dir="${build.java.dir}"/>
+       <mkdir dir="${build.test.dir}"/>
+        <mkdir dir="${test.results.dir}"/>
+    </target>
+
+    <target name="emma">
+        <property name="emma.enabled" value="true" />
+    </target>
+
+    <target name="emma-instr" depends="compile">
+	<emma enabled="${emma.enabled}">
+	    <instr instrpath="${build.java.dir}" destdir="${emma.instr.dir}" metadatafile="${emma.instr.dir}/metadata.emma" merge="true" >
+		<filter includes="org.*" />
+	    </instr>
+	</emma>
+    </target>
+
+    <target name="emma-generate-report">
+        <emma enabled="${emma.enabled}">
+        <report sourcepath="${src.java.dir}" metrics="${emma.threshold}" columns="class,method,block,line,name">
+            <fileset dir="${emma.instr.dir}">
+                <include name="*.emma" />
+            </fileset>
+            <txt outfile="${artifacts.emma.dir}/emma.txt" />
+            <html outfile="${artifacts.emma.dir}/index.html" />
+        </report>
+        </emma>
+    </target>
+
+    <target name="emma-report" depends="emma-generate-report" if="emma.enabled">
+        <loadfile srcfile="${artifacts.emma.dir}/emma.txt" property="coverage.summary">
+            <filterchain>
+                <linecontains>
+                    <contains value="all classes" />
+                </linecontains>
+            </filterchain>
+        </loadfile>
+        <echo>Coverage Summary:${line.separator}class,		method,			block,			line${line.separator}${coverage.summary}</echo>
+        <condition property="coverage.istoolow">
+	    <contains string="${coverage.summary}" substring="!" />
+	</condition>
+        <fail message="Coverage is below threshold: ${emma.threshold}" if="coverage.istoolow" />
+    </target>
+
+    <target name="checkstyle" depends="init"
+            description="Generates a report of code convention violations.">
+        <path id="checkstyle.lib">
+            <fileset dir="${config.artifacts.dir}">
+                <include name="checkstyle*.jar" />
+            </fileset>
+        </path>
+
+        <taskdef name="checkstyle" classname="com.puppycrawl.tools.checkstyle.CheckStyleTask">
+             <classpath refid="checkstyle.lib" />
+        </taskdef>
+
+        <checkstyle config="${checkstyle.config.file}"
+	     failureProperty="checkstyle.failure" failOnViolation="false">
+	     <formatter type="xml" tofile="${artifacts.checkstyle.dir}/checkstyle_report.xml" />
+		<fileset dir="${src.java.dir}" includes="**/*.java" />
+	 </checkstyle>
+         <style in="${artifacts.checkstyle.dir}/checkstyle_report.xml"
+             out="${artifacts.checkstyle.dir}/index.html"
+             style="${config.artifacts.dir}/checkstyle.xsl" />
+     </target>
+
+    <target name="cpd" depends="init" description="Check for code duplication">
+        <property name="artifacts.duplication.dir" location="${artifacts.dir}/duplication" />
+        <path id="pmd.lib">
+            <pathelement location="${config.artifacts.dir}/pmd-3.2.jar" />
+            <pathelement location="${config.artifacts.dir}/jaxen-core-1.0-fcs.jar" />
+            <pathelement location="${config.artifacts.dir}/saxpath-1.0-fcs.jar" />
+        </path>
+        <mkdir dir="${artifacts.duplication.dir}" />
+        <taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask" classpathref="pmd.lib" />
+        <cpd minimumTokenCount="50" outputFile="${artifacts.duplication.dir}/cpd.txt">
+	    <fileset dir="${src.java.dir}">
+                <include name="**/*.java"/>
+            </fileset>
+        </cpd>
+    </target>
+
+    <target name="compile" description="Compile Java" depends="init">
+        <javac srcdir="${src.java.dir}"
+               destdir="${build.java.dir}"
+               classpathref="classpath.build"
+               debug="true"/>
+        <copy todir="${build.java.dir}">
+            <fileset dir="${src.java.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+
+        <javac srcdir="${src.test.dir}"
+               destdir="${build.test.dir}"
+               classpathref="classpath.build"
+               classpath="${build.java.dir}"
+               debug="true"/>
+        <copy todir="${build.test.dir}">
+            <fileset dir="${src.test.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="unit-test" depends="emma-instr" description="Run unit tests">
+        <junit haltonfailure="false" fork="true" failureproperty="tests.failed" errorproperty="test.error">
+            <sysproperty key="basedir" value="${test.results.dir}"/>
+            <formatter type="xml"/>
+	    <classpath>
+		<pathelement location="${emma.instr.dir}" />
+		<path refid="emma.lib" />
+                <path refid="classpath.build"/>
+                <pathelement path="${build.java.dir}"/>
+                <pathelement path="${build.test.dir}"/>
+            </classpath>
+           <jvmarg value="-Demma.coverage.out.file=${emma.instr.dir}/coverage.emma" />
+           <jvmarg value="-Demma.coverage.out.merge=true" />
+           <batchtest todir="${test.results.dir}">
+             <fileset dir="${src.test.dir}">
+               <include name="**/*Test.java" />
+             </fileset>
+           </batchtest>
+        </junit>
+    </target>
+
+    <target name="junit-report" depends="unit-test">
+	<mkdir dir="${artifacts.test.dir}" />
+       <junitreport todir="${artifacts.test.dir}">
+           <fileset dir="${test.results.dir}">
+                <include name="TEST-*.xml" />
+           </fileset>
+	   <report format="frames" todir="${artifacts.test.dir}" />
+       </junitreport>
+       <fail if="test.failure" message="there were test failures" />
+       <fail if="test.error" message="there were test errors" />
+    </target>
+
+    <target name="archive" depends="unit-test">
+        <jar destfile="${artifacts.dir}/${project.name}.jar" basedir="${build.java.dir}" />
+        <zip destfile="${artifacts.dir}/${project.name}-src.zip" basedir="${src.java.dir}" />
+        <copy todir="${artifacts.dir}/docs">
+            <fileset dir="${doc.dir}">
+                <exclude name="**/CVS/*" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="build" depends="clean,emma,unit-test,report" description="clean and build everything, normally called by CI application"/>
+
+    <target name="release" depends="build, archive" description="clean, build everything, create jar file, normally called by release script">
+        <zip destfile="${build.dir}/${project.name}.zip">
+            <fileset dir="${artifacts.dir}">
+                <include name="${project.name}.jar" />
+                <include name="${project.name}-src.zip" />
+                <include name="docs/**/*" />
+            </fileset>
+        </zip>
+    </target>
+
+    <target name="report" depends="junit-report,emma-report,checkstyle"/>
+
+    <target name="clean" description="Clean up built files">
+        <delete dir="${build.dir}"/>
+    </target>
+
+</project>

@@ -1,0 +1,36 @@
+--------------------------------------------
+Release Project
+--------------------------------------------
+"Document":../docs/main.html @->@ Project Release
+
+h1. Getting Started
+
+Check out "Getting Started":../getting-started.html page first
+
+h1. Push-Button Release
+
+BuildMaster provides an easy way for the 
+user to invoke the programs needed for releasing a project. It also checks the return
+value of the program executation and raise the error if it is not zero.
+Since you are writing your scripts in Ruby, you will be able to run them in all the
+platforms that Ruby can.
+
+A push button release requires the interaction among the following three components:
+
+|_.Component|_.Description|_.Examples|
+|"Version Control System":version-control.html|aka VCS for checking-in, checking-out, tagging, etc.|"CVS":http://www.nongnu.org/cvs/, "Subversion":http://subversion.tigris.org/|
+|"Build System":build-system.html|compile, test, generat reports, create deliverables|"ANT":http://ant.apache.org/, "Maven":http://maven.apache.org/|
+|"Build Number Control":build-number.html|Used for increase build number automatically, and generate build information file|"BuildNumber":http://ant.apache.org/manual/CoreTasks/buildnumber.html Task in ANT|
+
+h1. Ruby as Scripting Tool
+
+Through our painful experience in writing various script for enterprise application release, staging, deployment,
+and maintenance, etc., we have come to the idea of using Ruby instead of Shell/DOS.  The reasons being:
+
+# Variable verification. Ruby will raise an exception while shell will treat it as empty string
+# Error Handing. You can raise an error in ruby without losing the information of where the error is.
+# Reusability
+# Testability
+
+The ideas are being collected on [project WiKi](http://buildmaster.rubyforge.org/wiki/wiki.pl?ProjectRelease)
+at the moment.

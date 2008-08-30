@@ -1,0 +1,39 @@
+---
+Getting Started
+---
+h1. Create Site Specification
+
+Create a site specifcation file @sitespec.rb@:
+
+<template:code source="site_spec_yaml_sample.rb" tag="site spec sample" syntax="ruby"/>
+
+h1. Create Content
+
+Let's start by creating @index.textile@ as the first content.  The @textile@ extention tells
+@BuildMaster@ the format of the content.  You can also create an @index.html@ if you
+prefer writing the content in HTML, or @index.markdown@ for MarkDown.
+
+Optionally you can specify the title of the page with the header.  This is a BuildMaster specific syntax but it has
+turned out to be very useful.
+
+<pre class="code">-------------------------------------
+Home Page Title
+-------------------------------------
+h1. Header
+
+Hello @BuildMaster@ World!
+</pre>
+
+For full reference on textile notation, see "Textile Reference":http://hobix.com/textile/
+
+h1. Build the Site
+
+Build the site by typing the following command and the HTML files will be generated in the @output_dir@ that you
+have specified in the site specification.
+
+<pre class="code">ruby sitespec.rb server</pre>
+
+This will start an HTTP server that serves files based on @content@ directory.  Just point your browser to
+""http://localhost:2000":http://localhost:2000".
+
+For more information, including running the server and testing the website, see "Build Site References":reference.html

@@ -1,0 +1,11 @@
+------------------------------------------
+Road Map
+------------------------------------------
+h1. Guideline
+
+The goal of this project is not to reinvent the wheels but to fill in the gap.
+
+h1. Tasks
+
+We are collecting ideas on our "Project Wiki":http://buildmaster.rubyforge.org/wiki/wiki.pl for the best way to
+approach project releasing, staging, deployment and installation.

@@ -1,0 +1,127 @@
+------------------------------------------
+Tag References
+------------------------------------------
+h1. Template Tag References
+
+Supported template tags are:
+
+* "template:attribute":#attribute
+* "template:each":#each
+* "template:href":#href
+* "template:include":#include
+* "template:link":#link
+* "template:text":#text
+* "template:when":#when
+
+<a name="attribute"> </a>
+h1. template:attribute
+
+Adds an attribute to the parent element.
+
+h2. Element Attributes
+
+|_.Name|_.Description|_.Required|
+|name|The name of the attribute to add or modify in the parent|yes|
+|eval|The "expression":#expression to be evaluated by site spec|yes|
+
+h2. Example
+
+<template:code source="templatelets.xhtml" tag="templatelet attribute" syntax="xml"/>
+
+This will generate:
+
+<template:code source="templatelets.xhtml" tag="result attribute" syntax="xml"/>
+
+<a name="each"> </a>
+h1. template:each
+
+Load the XML document, iterate through a list of selected XML elements and 
+use them as the source to process all children elements.
+
+h2. Element Attributes
+
+|_.Name|_.Descrption|_.Required|
+|source|Path(relative to content root) or URL of the XML document|yes|
+|select|XPath used to select the XML elements|yes|
+|count|Number of the selected elements to process|yes|
+
+h2. Example
+
+This is useful for generating list like latest news.  
+
+<template:code source="templatelets.xhtml" tag="each attribute" syntax="xml"/>
+
+<a name="href"> </a>
+h1. template:href
+
+Based on the position of the current file, generate @href@ (for @<a>@ tag) or @src@ (for @<img>@ tag) attribute
+that contains the relative path to the target file reference.
+
+h2. Element Attributes
+
+|_.Name|_.Description|_.Required|
+|url|Path (relative to content roott) or the URL of the referencd link or image|yes|
+
+h2. Example
+
+<template:code source="templatelets.xhtml" tag="href attribute" syntax="xml"/>
+
+The above example will generate the following result for the file in @<content_root>/doc/help.html@
+
+<template:code source="templatelets.xhtml" tag="href result" syntax="xml"/>
+
+<a name="include"> </a>
+h1. template:include
+
+Include the element of the current source content file.
+
+h2. Element Attributes
+
+|_.Name|_.Descrption|_.Required|
+|elements|xpath expression used to select the elements to include|yes|
+
+h2. Example
+
+<template:code source="templatelets.xhtml" tag="include attribute" syntax="xml"/>
+
+<a name="link"> </a>
+h1. template:link
+
+Generate the @<a>@ tag with correct relative path or URL, or @<div class="current">@ if the current file is 
+the referenced file.
+
+h2. Element Attributes
+
+|_.Name|_.Description|_.Required|
+|href|path (relative to content root) or URL of the link|yes|
+
+h2. Example
+
+<template:code source="templatelets.xhtml" tag="link attribute" syntax="xml"/>
+
+<a name="text"> </a>
+h1. template:text
+
+Generate dynamictext text content.
+
+h2. Element Attributes
+
+|_.Name|_.Description|_.Required|
+|property|static property set up in site spec|yes|
+
+<template:code source="templatelets.xhtml" tag="text attribute" syntax="xml"/>
+
+<a name="when"> </a>
+h1. template:when
+
+Conditionally process the children elements.
+
+h2. Element Attributes
+
+|_.Name|_.Descrption|_.Required|
+|test|"expression":#expression to evaluate, children will be processed if a true value is returned|yes|
+
+h2. Example
+
+<template:code source="templatelets.xhtml" tag="when attribute" syntax="xml"/>
+

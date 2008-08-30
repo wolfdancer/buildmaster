@@ -1,0 +1,16 @@
+-------------------------------------------------
+How to Contribute
+-------------------------------------------------
+h1. Try It
+
+The best contribution to an open-source project is to try it out and post your feedback at the
+"mailing list":http://groups.google.com/group/buildmaster
+
+h1. Log It
+
+For the moment, please use the "tracker on RubyForge":http://rubyforge.org/tracker/?group_id=1680
+
+h1. Patch It
+
+Let us know where you think we can improve.
+

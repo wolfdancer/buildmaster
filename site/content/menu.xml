@@ -1,0 +1,29 @@
+<menu>	
+	<group name="Software">
+		<item link="download.html">Download</item>
+		<item link="http://rubyforge.org/scm/?group_id=1680">Source Repository<item>
+		<item link="license.html">Project License</item>
+	</group>
+	<group name="Project Release" link="docs/main.html">
+		<item link="getting-started.html">Getting Started</item>
+        <item link="release/release-project.html">Project Release</item>
+        <item link="docs/build-site.html">Site Building</item>
+        <item link="docs/tag-references.html">Tag References</item>
+	</group>
+	<group name="User Support">
+		<item link="http://groups.google.com/group/buildmaster">Mailing List</item>
+        <item link="http://rubyforge.org/tracker/?group_id=1680">Issue Tracker</item>
+        <item link="news-rss2.xml">News Feed (RSS 2.0)</item>
+    </group>
+    <group name="Development">
+        <item link="road-map.html">Road Map</item>
+        <item link="how-to-contribute.html">How to Contribute</item>
+        <item link="team.html">Development Team</item>
+	</group>
+	<group name="References" link="references.html>
+		<item link="history.html">Project History</item>
+		<item link="http://hobix.com/textile/">Textile Reference</item>
+		<item link="http://www.pragmaticprogrammer.com/sk/auto/">Pragmatic Project Automation</item>
+		<item link="http://cotta.sourceforge.net/power.html">Cotta File Operation</item>
+	</group>
+</menu>

@@ -1,0 +1,12 @@
+----------------------------------------
+Miscellaneous
+----------------------------------------
+h1. ANT
+
+In the @ant@ directory you will find a @build.xml@ file, which has been a great help serving as a base line to
+set up a project build file that dose the compile, test, code coverage report, check style, cpd (code duplication report).
+
+More will be added in the future (and your contribution will be greated appreciated), inculding:
+
+* jdepend report
+* java ncss

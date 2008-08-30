@@ -1,0 +1,52 @@
+---------------------------------------------
+Documentation
+---------------------------------------------
+h1. Getting Started
+
+You should check out the "Getting Started":../getting-started.html page
+
+h1. Full Documentation
+
+* *"Project Releasing":../release/release-project.html* contains all the information for releasing a project
+using BuildMaster
+
+* *"Site Building":build-site.html* contains all the information for building a site using BuildMaster.
+
+* *"Cotta":cotta.html* contains the improved file/directory operations improved in BuildMaster.
+
+h1. Project Reports
+
+* "rDoc":../rdoc/index.html for class documentations
+* "rSpec":../rspec/index.html for class specification documentations
+* "rcov":../rcov/index.html for class test coverage report
+
+h1. Background
+
+This project came out of the effort of writing release script in DOS and shell for several Java projects.  As a result,
+the targeting projects are first those Java-based.
+
+As part of the effort to clean up "JBehave":http://www.jbehave.org site, the script files that are used are being modified
+greatly and the resulting files are checked into this project as well.
+
+The "Project Release" part of the BuildMaster is actually very straightforward.  The goal is to make it easy to write a
+Ruby version of the script outlined in this ""Pragmatic Project Automation Summary Road Map":http://www.pragmaticprogrammer.com/starter_kit/au/PragmaticAutomationSummary.pdf"
+on "The Pragmatic Programmers".
+
+The reason that we need a Ruby version is very simple: Platform independent.  Many times we have encountered the project
+environment where the individual development computers are on Windows and the build machine is on Linux or Unix.
+Maintaining two copies of the same script is a bit of paint.
+
+Out of the five key actions on the road map, there are already nice tools for "One-Step Builds", "Scheduled Builds"
+and "Monitoring".  Our job is to fill in the blank for "Push-Button Release" first, then "Installation & Deployment"
+
+The site building part of BuildMaster is very useful to maintain a static HTML website that contains a common look and feel
+(probably more @look@ than @feel@).
+
+* A XHTML file is used (the skin file) to apply to all content files
+* Content file can be written in either XHTML or "Textile":http://hobix.com/textile/ format.
+* A small HTTP server that allows the writer to see the changes that he or she makes immediatelly.
+* A small testing tool that allows the writer to test all the links to make sure that they are not broken
+
+h1. Project History
+
+See "Project History":../history.html

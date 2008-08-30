@@ -1,0 +1,100 @@
+-----------------------------------------------------
+History
+-----------------------------------------------------
+h1. Story of Forkers and Their Forks
+
+h2. As Joe describes it:
+
+Also documented on "XSite History":http://xsite.codehaus.org/history.html
+
+Once upon a time, there was a mock objects library called DynaMock
+written by Nat, living on "mockobjects.com":http://www.mockobjects.com.
+
+Joe came along and decided to fork in an attempt to rebrand and ditch
+the legacy. And so jMock was born. Of course, Joe didn't actually do
+much code, he just forked Nat's code and launched the new 
+jMock website.  Joe didn't even do that very well and because he was feeling
+so lazy he used Maven to create a very bad and unusable website.
+
+Meanwhile, Nat was doing great things with jMock but hated the
+website. So he spent some time analyzing user requirements for
+building a more useful website and came up with a new design.
+
+Nat built this site upon some little Ruby scripts called skinner.rb
+and xemplate.rb (here it is:
+"http://fisheye.codehaus.org/browse/jmock/jmock/website":http://fisheye.codehaus.org/browse/jmock/jmock/website). 
+This was a few years ago.
+
+And here is the result: "http://jmock.org/":http://jmock.org/
+
+Joe came along and really liked the look and navigation of the XStream
+website and wanted a similar thing for his opensource project.
+However, for ego stroking reasons ;), thought it could be done pretty
+easily as a 'mashup' between two of his existing opensource projects.
+
+So Joe reimplemented it in Java using SiteMesh and XStream. He called
+it MiniMesh. The code is here:
+"http://svn.xstream.codehaus.org/browse/xstream/trunk/xstream-website/":http://svn.xstream.codehaus.org/browse/xstream/trunk/xstream-website/
+
+And here is the result: "http://xstream.codehaus.org/":http://xstream.codehaus.org/ --- hmm... looks familiar.
+
+Not long after, Dan was also looking for a website for his opensource
+project, jBehave. He liked Ruby and grabbed Nat's scripts.
+
+And here is the result.  "http://jbehave.codehaus.org/":http://jbehave.codehaus.org/
+
+Meanwhile, Nat was making lots of improvements to his scripts, but Joe
+and Dan were missing out.
+
+A little later, Dan started another opensource project, ProxyToys.
+Jörg stepped up and drove it. Coincidentally, Jörg had also been
+driving XStream so he took Joe's fork of Nat's website and used that.
+
+And here is the result: "http://proxytoys.codehaus.org/":http://proxytoys.codehaus.org/
+
+Wait a minute! Jörg and Mauro (who was also driving XStream) noticed a
+lot of forking and duplication going on.
+
+So they created XSite, which was a fork of Joe's Java fork of Nat's Ruby code.
+
+This was a tool people could use to build similar sites.
+
+And here is the result: "http://xsite.codehaus.org/":http://xsite.codehaus.org/
+
+Meanwhile, Shane, who was involved with jBehave, had a similar idea
+and forked Dan's fork of Nat's fork and worked into his BuildMaster
+project:
+
+And here is the result: "http://buildmaster.rubyforge.org/":http://buildmaster.rubyforge.org/
+
+h2. BuildMaster Part of the Fork, by Shane
+
+Finally fed up with the clumsy File API in Java, and there were really not a whole lot to do
+in the evening while traveling to Xi'an, Shane forked their work and started another opensource project.  They have heard of jBehave and
+was intrigued by the idea so they decided to use this project to try it out.
+
+The implementation of project "Cotta":http://cotta.sourceforge.net with jBehave was a success, 
+but they hated the IDE support for jBehave, as in, well, _none_, and
+they also did not like the content of the documentation.
+
+So they decided to fork their work again to get involved with jBehave, starting by contributing plugins and updating the
+website.
+
+This is when Shane came to know the @skinner.rb@ and @xemplate.rb@, originally written by Nat and
+pretty much still resided in jMock repository.
+
+Having experienced the pain of maintaining two static websites and trying to come up with ways to make sure each site
+has a nice and consistent look, even been to the land as far as the dark side of Microsoft Frontpage, Shane realizes that
+this is a neat and simple solution.
+
+However, Shane have never enjoyed writing HTML tags or editing the CSS files, and Dan expressed the idea of writing the
+content in Textile format.
+
+Since there is already a Ruby implementation of Textile, Shane forked his work, yet again.  He consolidated his other Ruby
+script for releasing project, and started BuildMaster project on rubyforge.
+
+The original scripts were used as base, and were modified so that the content can be either straight XHTML or Textile.
+As the number of content files grew, the server and testing feature were added so that the user can see the result of the change
+immediatelly and make sure that there are no broken link on the website.
+
+And BuildMaster 0.6.0 was born.

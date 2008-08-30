@@ -1,0 +1,51 @@
+----------------------------------------------------------
+References
+----------------------------------------------------------
+h1. Project Release
+
+* "Project Automation":http://www.pragmaticprogrammer.com/sk/auto/
+
+h1. Site Publishing
+
+h2. Web Page Design References
+
+* "CSS (Cascading Style Sheets)":http://www.w3schools.com/css/css_reference.asp
+* "Color for Coders":http://www.sitepoint.com/article/color-for-coders: Color and Designer for the non-designer
+* "Color Lab":http://www.visibone.com/colorlab/big.html: Pick color made easy
+* "A List Apart":http://alistapart.com/: The way that CSS is supposed to be.
+
+h2. Syntax References
+
+h3. Content Syntax
+* "Textile Reference":http://hobix.com/textile/
+* "Markdown":http://daringfireball.net/projects/markdown/
+
+h3. Code Syntax Highlighting
+* "Syntax":http://syntax.rubyforge.org/: A Ruby project that generates HTML elements from a source
+* "dp.SyntaxHighlighter":http://www.dreamprojections.com/SyntaxHighlighter/: A JavaScript library that does the syntax highlighting
+
+h2. Other Site Publishing Tools
+
+There are quite a few tools around for publishing a site that you can check out, in case
+you don't find this one fits your need
+
+* "Apache Forrest":http://forrest.apache.org/
+* "Blosxon":http://www.blosxom.com/, runs on Perl 5
+* "Instiki":http://www.instiki.org/show/HomePage, runs on Ruby
+* "WordPress":http://wordpress.org/ 
+* "XSite":http://xsite.codehaus.org/, same origin, different language and implementation
+
+h1. Installation & Deployment
+
+Since installation and deployment is not something that is not used as frequently, and the processes are different from project
+to project, we are collecting ideas on the "project Wiki":http://buildmaster.rubyforge.org/wiki/wiki.pl at the moment.
+
+h2. Installation
+
+* "NSIS":http://nsis.sourceforge.net/Main_Page from "nullsoft":http://www.nullsoft.com/ is a nice opensource installer
+
+h1. Others
+
+* BuildMaster is hosted on "RubyForge":http://www.rubyforge.org
+* BuildMaster is partially built on "ThoughtWorks":http://www.thoughtworks.com beach
+time as part of the "ThoughtWorks OSS Support":http://opensource.thoughtworks.com/

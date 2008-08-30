@@ -1,0 +1,8 @@
+<project name="ant-test">
+  <target name="passing" description="A target that passes">
+    <echo message="invoked"/>
+  </target>
+  <target name="failing" description="A target that fails">
+    <fail message="failure message"/>
+  </target>
+</project>

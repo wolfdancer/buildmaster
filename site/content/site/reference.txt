@@ -1,0 +1,81 @@
+---
+Site Building Reference
+---
+h1. Contents
+
+# Check out "Getting Started":getting-started.html page first
+# Understand "How it is put together":site-diagram.html
+# "Template Tag References":tag-references.html
+# "Expression Evaluation":#expression
+# "Supported Content Format":#format
+# "Server Mode":#server
+# "Site Testing":#testing
+
+<a name="expression"> </a>
+h1. Expression Evaluation
+
+The expressions in the template are all evaluated by invoking the method on the site specification object, or in Ruby
+term, sending the message back to the site specification.  When defining the method, it can take
+the path of the content file as the optional argument.
+
+The following code demostrate how you can evaluate the expression "@index_file?@"
+
+<template:code source="build-site-samples.rb" syntax="ruby" tag="site spec"/>
+
+<a name="format"> </a>
+h1. Content Format Support
+
+BuildMaster supports different content file formats for people who enjoy Wiki style editing more than HTML.
+Current supported formats are:
+
+* "XHTML":http://www.w3.org/TR/xhtml1/
+* "Textile":http://hobix.com/textile/
+* "Markdown":http://daringfireball.net/projects/markdown/
+
+<a name="server"> </a>
+h1. Server Mode
+
+You need to have "Webricks":http://www.webrick.org/ in your ruby environment, which is installed as part of the
+"One-Click Ruby Installer":http://rubyinstaller.rubyforge.org/ on windows
+
+Ideally, you would like something WYSIWYG, in the case where there are not enough bandwidth to do everything, we settle
+for the next best thing.
+
+With the site spec file written (see "Getting Started":../getting-started.html), you can launch a small webserver through
+command
+
+<pre class="code">ruby sitespec.rb server</pre>
+
+Now, you can connect to this server using your browser at URL: @http://localhost:2000@
+
+Because this HTTP server is being backed at the same engine as the site builder, it can convert the files on the fly, as
+well as serving the other resource files.  This means that you can use any of your favorite editor to modify the files,
+swich back to browser, and refresh the browser to see the result changes that you have just made.
+
+<a name="testing"> </a>
+h1. Site Testing
+
+You need to have "Watir":http://wtr.rubyforge.org in your Ruby environment.
+
+As the number of the files grows bigger, it is hard to make sure that all of them are linked to each other and that the
+external links are still valid.  BuildMaster has a easy class @SiteTester@ that can crawl through the site, with the
+help of "Watir":http://wtr.rubyforge.org, and test all the links for you.
+
+With the site spec file written (see "Getting Started":../getting-started.html), you can start the test through command
+
+<pre class="code">ruby sitespec.rb test</pre>
+
+If you are not online (which is 80% of the cases when the documentation of this project is being written), you can tell
+your test to only test the local links:
+
+<pre class="code">ruby sitespec.rb test_offline</pre>
+
+h2. Other Site Testing
+
+If you are not using BuildMaster to build your website but still want to check if there any broken link, you can do it by
+creating a ruby file with following content:
+
+
+This is useful for you to run test against your website to make sure all the links are working.
+
+<template:code source="build-site-samples.rb" syntax="ruby" tag="test"/>

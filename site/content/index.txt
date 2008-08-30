@@ -1,0 +1,23 @@
+-----------------
+Home
+-----------------
+
+<div class="padding">
+</div>
+<div class="story">
+<h2>"Cotta File Operations":cotta/index.html</h2>
+<p>As a ruby programmer, I would like to have a set of class to use for file operations so that I can write my code in an object-oriented way
+and be able to test them, plus an easy API for archive and zip.</p>
+</div>
+
+<div class="story">
+<h2>"Project Release":project/index.html</h2>
+<p>As a build master, I would like to make my build, release and deployment script as automated as possible, and of high quality and testability as
+the application themselves.</p>
+</div>
+
+<div class="story">
+<h2>"Site Building":site/index.html</h2>
+<p>As a content provider of a static HTML website, I would like to easily maintian the website with a consistent look and update the content without
+worrying about HTML tags.</p>
+</div>

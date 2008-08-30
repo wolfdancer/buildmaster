@@ -1,0 +1,23 @@
+--------------
+Development Plan
+--------------
+h1. Next Action
+This is the items that have been identified and are under construction.  These are also the ones for which we have identified customers.  If you would like
+something in the backlog implemented, you can apply to serve as a customer.
+
+* Add 'setup' method in Site that can copy the predefined template
+* Add the ability to specify the menu items and item groups through xml so that the template file won't have to change
+* Add the ability to specify the menu items and item groups through yaml.
+
+h1. Backlog list - Project Releasing
+* Add open source project class that has information about project information like svn, web, release
+* Add support for rubyforge
+* Add support for sourceforge
+* Add support for ThoughtWorks gforge
+
+h1. Backlog list - Sit Building
+* 
+
+h1. Backlog list - Cotta
+* Read from a zip file
+* Write to a zip file

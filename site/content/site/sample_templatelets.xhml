@@ -1,0 +1,10 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:template="http://buildmaster.rubyforge.org/xtemplate/1.0">
+<html>
+  <header>Sample</header>
+  <body>
+    <div id="attribute">
+    	<template:attribute name="class" eval="center_class"/>
+    </div>
+  </body>
+</html>

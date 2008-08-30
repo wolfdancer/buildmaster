@@ -1,0 +1,12 @@
+---
+Getting Started
+---
+h1. Release Project
+
+If you are using Subversion as your version control system, and ANT as your build system, then the following script
+will release a project.  Note how you don't have to check the return value of the
+commands being carried out becausee BuildMaster will check it for you and throw an exception if it is not @0@.
+
+<template:code source="java_project_release_sample.rb" tag="release sample" syntax="ruby"/>
+
+For more information, see "Full References":classes.html

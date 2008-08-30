@@ -1,0 +1,36 @@
+---
+Project Release
+---
+h1. Push-Button Release
+
+BuildMaster provides an easy way for the
+user to invoke the programs needed for releasing a project. It also checks the return
+value of the program executation and raise the error if it is not zero.
+Since you are writing your scripts in Ruby, you will be able to run them in all the
+platforms that Ruby can.
+
+A push button release requires the interaction among the following three components:
+
+|_.Component|_.Description|_.Examples|
+|"Version Control System":version-control.html|aka VCS for checking-in, checking-out, tagging, etc.|"CVS":http://www.nongnu.org/cvs/, "Subversion":http://subversion.tigris.org/|
+|"Build System":build-system.html|compile, test, generat reports, create deliverables|"ANT":http://ant.apache.org/, "Maven":http://maven.apache.org/|
+|"Build Number Control":build-number.html|Used for increase build number automatically, and generate build information file|"BuildNumber":http://ant.apache.org/manual/CoreTasks/buildnumber.html Task in ANT|
+
+h1. Drivers for programs
+
+* "AntDriver":../rdoc/classes/BuildMaster/AntDriver.html
+* "CvsDriver":../rdoc/classes/BuildMaster/CvsDriver.html
+* "FtpDriver":../rdoc/classes/BuildMaster/FtpDriver.html
+* "PscpDriver":../rdoc/classes/BuildMaster/PscpDriver.html
+* "SvnAdminDriver":../rdoc/classes/BuildMaster/SvnAdminDriver.html
+* "SvnDriver":../rdoc/classes/BuildMaster/SvnDriver.html
+
+h1. Classes for Reading and Updating Files
+
+* "JavaManifest":../rdoc/classes/BuildMaster/JavaManifest.html
+* "VersionNumber":../rdoc/classes/BuildMaster/VersionNumber.html
+
+h1. Other
+
+* "Release":../rdoc/classes/BuildMaster/Release.html
+* "ServerManager":../rdoc/classes/BuildMaster/ServerManager.html

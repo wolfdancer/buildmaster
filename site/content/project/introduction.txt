@@ -1,0 +1,11 @@
+---
+Build Script with Ruby
+---
+h1. Build Script with Ruby
+
+BuildMaster is created to help writing script for building, releasing and depolying application by providing
+the following values:
+
+* Platform independent, working anywhere Ruby works
+* Program drivers lets you treat the external programs as objects so that it is easy to invoke them
+* Error with detailed message will be raised automatically if the program exits with an error code.

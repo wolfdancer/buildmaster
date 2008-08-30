@@ -1,0 +1,42 @@
+<xml>
+	<!-- START templatelet attribute -->
+	<div>
+  		<template:attribute name="class" eval="center_class"/>
+  		...
+	</div>
+	<!-- END templatelet attribute -->
+	<!-- START result attribute -->
+	<div class="Column2Center">
+		...
+	</div>
+	<!-- END result attribute -->
+	<!-- START each attribute -->
+	<template:each source="news_rss2" select="/rss/channel/item" count="3">
+	  <div class="NewsItem">
+	    <p class="NewsTitle"><template:include elements="./title/text()"/></p>
+	    <p class="NewsDate"><template:include elements="./pubDate/text()"/></p>
+	    <p class="NewsText"><template:include elements="./xhtml:div/node()"/></p>
+	  </div>
+	</template:each>	
+	<!-- END each attribute -->
+	<!-- START href attribute -->
+    <img><template:href url="images/logo.gif"/></img>
+	<!-- END href attribute -->
+	<!-- START href result -->
+    <img src="../images/logo.gif"/>
+	<!-- END href result -->
+	<!-- START include attribute -->
+    <template:include elements="/html/head/title/text()"/>
+	<!-- END include attribute -->
+	<!-- START link attribute -->
+    <li><template:link href="download.html">Download and Dependencies</template:link></li>
+	<!-- END link attribute -->
+
+	<!-- START text attribute -->
+    <template:text property="release"/>
+	<!-- END text attribute -->
+
+	<!-- START when attribute -->
+    <template:when test="index_file?">
+	<!-- END when attribute -->
+</xml>

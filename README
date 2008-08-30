@@ -1,0 +1,33 @@
+= BuildMaster[http://buildmaster.rubyforge.org] - Building and releasing project and site with Ruby
+
+Homepage::  http://buildmaster.rubyforge.org
+Author::    Shane
+Copyright:: (c) 2006 BuildMaster on rubyforge
+License::   Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+BuildMaster[http://buildmaster.rubyforge.org] is a project that targets project building, 
+releasing and site building.
+
+This rDoc is intended for you the check out the available methods on the objects.  For a full 
+document of what BuildMaster[http://buildmaster.rubyforge.org] can do for you, please check out 
+BuildMaster[http://buildmaster.rubyforge.org]'s home page: 
+http://buildmaster.rubyforge.org
+
+Please post your question at mailing-list[http://groups.google.com/group/buildmaster/]
+
+== Project Building and Releasing
+
+A ruby version of the project building and releasing script as described in
+"Pragmatic Project Automation" (http://www.pragmaticprogrammer.com/sk/auto/)
+
+== Site Building
+
+A simple template engine that can build a website by producing the content pages based on the specified source
+and decrorating the content pages with a skin.
+
+The supported content sources are XHTML[http://www.w3.org/TR/xhtml11/], Textile[http://hobix.com/textile/] and 
+Markdown[http://daringfireball.net/projects/markdown/].
+
+== Cotta
+
+A wrapper of Ruby file operations in an object-oriented way.

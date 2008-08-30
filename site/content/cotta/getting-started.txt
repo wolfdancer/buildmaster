@@ -1,0 +1,22 @@
+---
+Getting Started with Cotta
+---
+h1. Creation
+
+All cotta file and directory creations are done through @BuildMaster::Cotta@.
+
+<template:code source="example.rb" tag="creation" syntax="ruby"/>
+
+h1. File and Directory operations
+
+The file and directory objects has the methods for the opertions that apply to them.
+
+<template:code source="example.rb" tag="operation" syntax="ruby"/>
+
+h1. Test
+
+The @BuildMaster::Cotta@ is backed by a file system.  By default, it is @BuildMaster::PhysicalSystem@.
+For testing purpose, you can create Cotta objects using @BuildMaster::InMemorySystem@ and inject them
+into the class that you are trying to test.
+
+<template:code source="example.rb" tag="test" syntax="ruby"/>

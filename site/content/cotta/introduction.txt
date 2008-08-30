@@ -1,0 +1,10 @@
+---
+Cotta Introduction
+---
+h1. One-Minute Introduction
+
+Cotta is created to provide the following value:
+
+* Provide domain driven (file operation) API with directory, file object and their factory
+* Provide the "InMemorySystem":../rdoc/classes/BuildMaster/InMemorySystem.html that makes testing easy.
+* Provide the API for executing program and "CommandInterface":../rdoc/classes/BuildMaster/CommandInterface.html for command line programming.

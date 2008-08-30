@@ -1,0 +1,9 @@
+Package: libbuildmaster-ruby
+Version: 0.9.1
+Section: devel
+Priority: optional
+Architecture: all
+Depends:  ruby,rake,libredcloth-ruby,libyaml-ruby,libwebrick-ruby
+Maintainer: Julian Simpson <julian@juliansimpson.org>
+Description: Software build and release library
+ Platform independent scripts for building and releasing software and websites

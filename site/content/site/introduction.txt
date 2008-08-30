@@ -1,0 +1,10 @@
+---
+Site Building
+---
+h1. Building Site
+
+BuildMaster can help building a static HTML web site by providing the following values:
+
+* Generated static HTML files can be hosted at any web server.
+* Seperate the layout and the content so that the web site has a consistent look
+* Markup engings so that you can focus on what you want to write, rather than the HTML tags.
