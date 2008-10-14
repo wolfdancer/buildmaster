@@ -1,9 +1,4 @@
-$:.unshift(File.join('..', File.dirname(__FILE__)))
-
 require 'uri'
-
-require 'site/template_error'
-require 'template_runner'
 
 module BuildMaster
 

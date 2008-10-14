@@ -1,6 +1,7 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..')
+current = File.dirname(__FILE__)
 
-require 'lib/buildmaster/auto'
+require current + '/cotta/physical_system_stub'
+require current +'/../../lib/buildmaster/auto'
 require 'spec'
 
 module BuildMaster
@@ -18,5 +19,3 @@ module BuildMaster
 
   end
 end
-
-$:.shift

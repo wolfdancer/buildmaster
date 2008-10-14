@@ -1,5 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-require 'auto'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/auto'
 require 'spec'
 
 module BuildMaster

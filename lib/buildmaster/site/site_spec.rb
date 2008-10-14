@@ -1,16 +1,4 @@
 require 'pathname'
-$:.unshift File.join(File.dirname(__FILE__), '..', '..')
-require 'common'
-require 'cotta'
-
-$:.unshift File.dirname(__FILE__)
-require 'templatelets'
-require 'template_builder'
-require 'element_processor_by_name'
-require 'xtemplate'
-require 'project/build_number_file'
-require 'content_engine_repository'
-
 
 module BuildMaster
 

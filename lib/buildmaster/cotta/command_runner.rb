@@ -1,7 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'command_error'
-
 module BuildMaster
   
 # Command runner

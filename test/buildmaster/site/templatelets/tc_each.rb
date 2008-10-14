@@ -1,6 +1,6 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'common_templatelet_test'
+require 'spec'
+require File.dirname(__FILE__) + '/../test'
+require File.dirname(__FILE__) + '/common_templatelet_test'
 
 module BuildMaster
 

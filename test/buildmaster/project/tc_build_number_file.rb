@@ -1,10 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-
-require 'project/build_number_file'
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 describe BuildNumberFile do

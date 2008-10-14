@@ -1,7 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..')
-
-require 'cotta'
-
 module BuildMaster
 class PscpDriver
   def initialize(server_url, cotta = Cotta.new())

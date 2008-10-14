@@ -1,3 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), 'algorithms')
+dir = File.dirname(__FILE__)
 
-require 'opn_compare'
+require dir + '/algorithms/opn_compare'

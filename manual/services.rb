@@ -1,6 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+dir = File.dirname(__FILE__)
 
-require 'buildmaster/windows'
+require dir + '../lib/buildmaster/windows'
 
 argument = ARGV[0]
 argument = 'status' unless argument

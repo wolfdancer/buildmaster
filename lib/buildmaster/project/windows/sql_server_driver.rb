@@ -1,4 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', 'cotta')
 module BuildMaster
 
 class SqlServerDriver

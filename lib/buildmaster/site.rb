@@ -1,5 +1,17 @@
-$:.unshift(File.dirname(__FILE__))
+dir = File.dirname(__FILE__)
 
-require 'cotta'
-require 'site/site_spec'
-require 'site/site'
+require dir + '/cotta'
+require dir + '/common'
+require dir + '/site/file_processor'
+require dir + '/site/site_spec'
+require dir + '/site/site'
+require dir + '/site/source_content'
+require dir + '/site/source_file_handler'
+require dir + '/site/content_engine_repository'
+require dir + '/site/site_server'
+require dir + '/site/templatelets'
+require dir + '/site/template_builder'
+require dir + '/site/template_error'
+require dir + '/site/template_runner'
+require dir + '/site/element_processor_by_name'
+require dir + '/site/xtemplate'

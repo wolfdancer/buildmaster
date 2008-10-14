@@ -1,12 +1,7 @@
 require 'spec'
-
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'cotta/io_chain'
-require 'cotta'
-
-$:.unshift File.dirname(__FILE__)
-require 'physical_system_stub'
+dir = File.dirname(__FILE__)
+require dir + '/../test'
+require dir + '/physical_system_stub'
 
 module BuildMaster
 module IoChain

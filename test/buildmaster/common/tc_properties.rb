@@ -1,8 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
 require 'stringio'
-require 'common/properties'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/common/properties'
 
 module BuildMaster::Common
 

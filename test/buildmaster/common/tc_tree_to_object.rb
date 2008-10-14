@@ -1,8 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
 
-require 'common/tree_to_object'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/common/tree_to_object'
 
 module BuildMaster
 

@@ -1,7 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'site/template_error'
-
 module BuildMaster
   class TemplateRunner
     @@NAMESPACE = 'http://buildmaster.rubyforge.org/xtemplate/1.0'

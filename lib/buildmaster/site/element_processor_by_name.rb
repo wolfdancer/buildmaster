@@ -1,7 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..')
-
-require 'site/template_error'
-
 module BuildMaster
 
 class ElementProcessorByName

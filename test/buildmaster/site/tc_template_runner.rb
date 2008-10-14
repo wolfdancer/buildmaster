@@ -1,13 +1,8 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", "lib", 'buildmaster')
-
 require 'rexml/xpath'
 require 'rexml/document'
-require 'spec'
 require 'pathname'
-require 'site/template_runner'
-require 'site/source_content'
-require 'site/templatelets'
-require 'site/element_processor_by_name'
+require 'spec'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 class NameTemplatelet

@@ -55,3 +55,5 @@ context 'example for creating the objects' do
     # END test
     end
 end
+
+$:.shift

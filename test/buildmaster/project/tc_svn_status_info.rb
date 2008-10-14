@@ -1,7 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-require 'project/svn_status_info'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 

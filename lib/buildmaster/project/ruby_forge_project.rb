@@ -1,6 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-require 'svn_driver'
-
 module BuildMaster
 class RubyForgeProject
   attr_reader :source_repository, :svn, :name, :group_id

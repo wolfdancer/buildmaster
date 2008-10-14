@@ -1,6 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', 'lib', 'buildmaster')
+dir = File.dirname(__FILE__)
 
-require 'auto'
+require dir + '../lib/buildmaster/auto'
 
 mysql = BuildMaster::MySqlServer.new(BuildMaster::Cotta.dir('D:\Tools\mysql-5.0.51a-win32'))
 if (ARGV.empty?)

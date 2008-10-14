@@ -7,3 +7,5 @@ require 'buildmaster/cotta'
 #START in memory
 require 'buildmaster/cotta/in_memory_system'
 #END in memory
+
+$:.shift

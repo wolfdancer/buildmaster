@@ -1,8 +1,4 @@
-$:.unshift File.dirname(__FILE__)
-
 require 'webrick'
-require 'source_file_handler'
-require 'about_handler'
 require 'net/http'
 
 module BuildMaster
@@ -42,6 +38,7 @@ class SiteServer
       url = URI.parse("http://localhost:#{@port_number}/")
       request = Net::HTTP::Get.new(url.path)
       begin
+        puts "getting #{url}"
         res = Net::HTTP.start(url.host, url.port) {|http|
           http.read_timeout=5
           http.request(request)

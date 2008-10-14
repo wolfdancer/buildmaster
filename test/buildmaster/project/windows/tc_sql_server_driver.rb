@@ -1,9 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-require 'windows/sql_server_driver'
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/../../../../lib/buildmaster/windows'
+require File.dirname(__FILE__) + '/../../../../lib/buildmaster/cotta'
 
 module BuildMaster
 

@@ -1,7 +1,8 @@
-$:.unshift File.join(File.dirname(__FILE__))
+dir = File.dirname(__FILE__)
 
-require 'cotta/cotta'
-require 'cotta/in_memory_system'
-require 'cotta/file_not_found_error'
-
-$:.shift
+require dir + '/cotta/cotta'
+require dir + '/cotta/in_memory_system'
+require dir + '/cotta/file_not_found_error'
+require dir + '/cotta/command_runner'
+require dir + '/cotta/command_error'
+require dir + '/cotta/command_interface'

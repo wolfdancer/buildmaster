@@ -1,6 +1,6 @@
-$:.unshift File.dirname(__FILE__)
+require File.dirname(__FILE__) + '../../test'
 
-require 'common_templatelet_test'
+require File.dirname(__FILE__) + '/common_templatelet_test'
 
 module BuildMaster
 describe 'code template processsing' do

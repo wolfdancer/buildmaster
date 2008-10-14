@@ -1,10 +1,7 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
 require 'rexml/xpath'
-require 'site/template_builder'
-require 'common/tree_to_object'
 require 'yaml'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 describe TemplateBuilder do

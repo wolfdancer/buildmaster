@@ -1,10 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", '..', "lib", 'buildmaster')
-
 require 'spec'
-require 'site/site'
-require 'cotta'
-require 'cotta/command_interface'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 

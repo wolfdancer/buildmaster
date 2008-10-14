@@ -1,8 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..')
-
-require '../cotta'
-require '../cotta/in_memory_system'
-
 module BuildMaster
 class SvnServerDriver
   def initialize(server, repository)

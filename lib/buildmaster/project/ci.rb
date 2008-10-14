@@ -1,3 +1,3 @@
-$:.unshift File.dirname(__FILE__)
+dir = File.dirname(__FILE__)
 
-require 'ci/server'
+require dir + '/../ci/server'

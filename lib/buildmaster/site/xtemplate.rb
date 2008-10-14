@@ -1,7 +1,4 @@
-$:.unshift File.dirname(__FILE__)
-
 require 'rexml/document'
-require 'template_runner'
 
 module BuildMaster
   class XTemplate

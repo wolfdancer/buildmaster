@@ -15,9 +15,13 @@
   </component>
   <component name="RModuleSettingsStorage">
     <RMODULE_SETTINGS_STORAGE_ID NAME="SHOULD_USE_RSPEC_TEST_FRAMEWORK" VALUE="true" />
+    <RMODULE_SETTINGS_STORAGE_ID NAME="SHOULD_USE_TEST_UNIT_TEST_FRAMEWORK" VALUE="false" />
     <RMODULE_SETTINGS_STORAGE_ID NAME="NUMBER" VALUE="1" />
     <RMODULE_SETTINGS_STORAGE_ID NAME="CHECKED0" VALUE="true" />
     <RMODULE_SETTINGS_STORAGE_ID NAME="DIR0" VALUE="$MODULE_DIR$/lib/buildmaster" />
+  </component>
+  <component name="RSpecModuleSettingsStorage">
+    <RSPEC_MODULE_SETTINGS_STORAGE_ID NAME="RSPEC_SUPPORT_TYPE" VALUE="NONE" />
   </component>
 </module>
 

@@ -1,9 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'stringio'
-require 'rexml/document'
-require 'svn_status_info'
-
 module BuildMaster
 
 class SvnDriver    

@@ -1,7 +1,7 @@
-$:.unshift File.dirname(__FILE__)
+root = File.dirname(__FILE__)
 
-require 'lib/buildmaster/site'
-require 'lib/buildmaster/cotta'
+require root + '/lib/buildmaster/site'
+require root + '/lib/buildmaster/cotta'
 
 class BuildMasterSite < BuildMaster::SiteSpec  
   def history(content_path)

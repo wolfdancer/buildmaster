@@ -1,9 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", '..', "lib", 'buildmaster')
-
 require 'spec'
 require 'webrick'
-require 'site/source_file_handler'
-require 'cotta'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 

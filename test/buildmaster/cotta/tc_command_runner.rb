@@ -1,8 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-require 'cotta/command_runner'
-require 'cotta/command_error'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/cotta'
 
 module BuildMaster
 describe CommandRunner do

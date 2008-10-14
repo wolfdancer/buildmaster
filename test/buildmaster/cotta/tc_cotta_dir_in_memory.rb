@@ -1,11 +1,8 @@
-$:.unshift File.dirname(__FILE__)
-require 'cotta_dir_behaviors'
-$:.shift
-
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-require 'cotta/in_memory_system'
+
+dir = File.dirname(__FILE__)
+require dir + '/cotta_dir_behaviors'
+require dir + '/../test'
 
 module BuildMaster
   describe InMemorySystem, 'with Cotta Dir' do

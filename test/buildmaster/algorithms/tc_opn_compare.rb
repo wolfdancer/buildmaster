@@ -1,8 +1,8 @@
 require 'spec'
 
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
+dir = File.dirname(__FILE__)
 
-require 'algorithms/opn_compare'
+require dir + '/../../../lib/buildmaster/algorithms/opn_compare'
 
 module BuildMaster
   module Algorithms

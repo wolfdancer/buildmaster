@@ -1,8 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'project/server_manager'
 require 'spec'
-
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 class StubServer

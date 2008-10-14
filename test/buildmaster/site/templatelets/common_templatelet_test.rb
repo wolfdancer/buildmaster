@@ -1,14 +1,7 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", "..", '..', "lib", 'buildmaster')
-
 require 'rexml/xpath'
 require 'rexml/document'
 require 'spec'
-require 'site/site_spec'
-require 'site/source_content'
-require 'site/template_error'
-require 'site/templatelets'
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 module HelperMethods

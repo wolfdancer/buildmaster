@@ -1,7 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..')
-
-require 'template_runner'
-
 module BuildMaster
 class When
   def initialize(site_spec, expression_evaluator)

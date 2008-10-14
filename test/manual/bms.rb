@@ -1,7 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', 'buildmaster')
-
-require 'cotta'
-require 'ci'
+require File.dirname(__FILE__) + '/../../lib/buildmaster/cotta'
+require File.dirname(__FILE__) + '/../../lib/buildmaster/auto'
 
 dir = BuildMaster::Cotta.file(__FILE__).parent.dir('../../tmp/bms')
 dir.mkdirs

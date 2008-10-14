@@ -1,10 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", "lib", 'buildmaster')
-
 require 'rexml/xpath'
 require 'spec'
-require 'site/source_content'
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 

@@ -1,9 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", '..', "lib", 'buildmaster')
-
 require 'spec'
 require 'rexml/element'
-require 'site/element_processor_by_name'
-require 'site/source_content'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 describe 'element processor by element name' do

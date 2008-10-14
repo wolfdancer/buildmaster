@@ -1,8 +1,5 @@
 require 'fileutils'
 
-$:.unshift File.dirname(__FILE__)
-require 'io_chain'
-
 module BuildMaster
 class CottaFile
   include IoChain

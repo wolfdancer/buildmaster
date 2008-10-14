@@ -1,9 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'cotta'
-require 'svn_driver'
-require 'svn_status_info'
-
 module BuildMaster
 
 =begin

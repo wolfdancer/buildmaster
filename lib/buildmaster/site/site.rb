@@ -1,8 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__))
-
 require 'fileutils'
-require 'file_processor'
-require 'site_server'
 
 module BuildMaster
   class NullLogger

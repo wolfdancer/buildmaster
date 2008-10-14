@@ -1,7 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'svn_driver'
-
 module BuildMaster
 class SvnAdminDriver
   def initialize(path)

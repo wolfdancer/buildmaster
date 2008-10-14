@@ -1,9 +1,5 @@
 require 'spec'
-
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 describe Cotta, 'zip support' do

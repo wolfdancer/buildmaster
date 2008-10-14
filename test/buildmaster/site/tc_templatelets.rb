@@ -1,11 +1,7 @@
-$:.unshift File.dirname(__FILE__)
-require 'templatelets/common_templatelet_test'
-
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', 'lib', 'buildmaster')
-
-require 'templatelets'
 require 'rexml/element'
 require 'spec'
+require File.dirname(__FILE__) + '/templatelets/common_templatelet_test'
+require File.dirname(__FILE__) + '/test'
 
 module BuildMaster
 

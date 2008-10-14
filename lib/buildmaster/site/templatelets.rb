@@ -1,14 +1,13 @@
-$:.unshift(File.dirname(__FILE__))
+dir = File.dirname(__FILE__) + '/templatelets'
 
-require 'templatelets/href'
-require 'templatelets/attribute'
-require 'templatelets/each'
-require 'templatelets/include'
-require 'templatelets/link'
-require 'templatelets/text'
-require 'templatelets/when'
-require 'templatelets/code'
-require 'site/template_error'
+require dir + '/href'
+require dir + '/attribute'
+require dir + '/each'
+require dir + '/include'
+require dir + '/link'
+require dir + '/text'
+require dir + '/when'
+require dir + '/code'
 
 module REXML
 class Element

@@ -1,25 +1,25 @@
-$:.unshift File.join(File.dirname(__FILE__))
-require 'cotta'
-$:.shift
+dir = File.dirname(__FILE__)
+require dir + '/cotta'
 
-$:.unshift File.join(File.dirname(__FILE__), 'project')
-require 'build_number_file'
-require 'java_manifest'
-require 'ant_driver'
-require 'cvs_driver'
-require 'pscp_driver'
-require 'svn_driver'
-require 'version_number_file'
-require 'release'
-$:.shift
+project = dir + '/project'
+require project + '/build_number_file'
+require project + '/java_manifest'
+require project + '/ant_driver'
+require project + '/cvs_driver'
+require project + '/pscp_driver'
+require project + '/svn_driver'
+require project + '/svn_status_info'
+require project + '/server_manager'
+require project + '/version_number_file'
+require project + '/release'
+require project + '/ci'
 
-$:.unshift File.join(File.dirname(__FILE__), 'auto')
-require 'classpath'
-require 'java'
-require 'javac_ant'
-require 'junit_ant'
-require 'package_ant'
-require 'java_project'
-require 'mysql_server'
-require 'ruby_platform'
-$:.shift
+auto = dir + '/auto'
+require auto + '/classpath'
+require auto + '/java'
+require auto + '/javac_ant'
+require auto + '/junit_ant'
+require auto + '/package_ant'
+require auto + '/java_project'
+require auto + '/mysql_server'
+require auto + '/ruby_platform'

@@ -1,8 +1,8 @@
-$:.unshift File.dirname(__FILE__)
-
 require 'spec'
-require 'cotta_file_behaviors'
-require 'physical_system_stub'
+dir = File.dirname(__FILE__)
+require dir + '/../test'
+require dir + '/cotta_file_behaviors'
+require dir + '/physical_system_stub'
 
 module BuildMaster
 describe PhysicalSystem, 'with cotta file' do

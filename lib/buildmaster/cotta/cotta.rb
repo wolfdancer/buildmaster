@@ -1,11 +1,12 @@
-$:.unshift File.dirname(__FILE__)
+dir = File.dirname(__FILE__)
 
-require 'physical_system'
-require 'cotta_dir'
-require 'cotta_file'
 require 'pathname'
-require 'cotta_pathname'
-require 'command_interface'
+require dir + '/physical_system'
+require dir + '/io_chain'
+require dir + '/cotta_dir'
+require dir + '/cotta_file'
+require dir + '/cotta_pathname'
+require dir + '/command_interface'
 
 module BuildMaster
   

@@ -1,7 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), '..')
-require 'cotta/cotta'
-require 'cotta/in_memory_system'
-
 module BuildMaster
 class IisDriver
   def initialize(cotta=Cotta.new)

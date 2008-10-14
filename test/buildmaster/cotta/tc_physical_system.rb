@@ -1,12 +1,7 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'file_system_behaviors'
-require 'physical_system_stub'
-  
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'cotta/physical_system'
 require 'spec'
+dir = File.dirname(__FILE__)
+require dir + '/../test'
+require dir + '/file_system_behaviors'
 
 module BuildMaster
 

@@ -1,7 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'site/template_error'
 require 'spec'
+require File.dirname(__FILE__) + '/test'
 
 describe 'template error' do
   it 'format of exception' do

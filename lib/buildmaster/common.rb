@@ -1,3 +1,3 @@
-$:.unshift File.join(File.dirname(__FILE__), 'common')
-require 'properties'
-require 'tree_to_object'
+dir = File.dirname(__FILE__) + '/common'
+require dir + '/properties'
+require dir + '/tree_to_object'

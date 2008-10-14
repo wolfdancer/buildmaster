@@ -30,3 +30,5 @@ svn.commit("releasing #{manifest.version.number} build #{manifest.version.build}
 puts 'tagging into <repository-path>/tags/<tag-name>'
 svn.tag("project-#{manifest.version}b#{manifest.version.build}")
 #END release sample
+
+$:.shift

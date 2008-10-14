@@ -1,7 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'site_spec'
-require 'source_content'
 require 'pathname'
 
 module BuildMaster

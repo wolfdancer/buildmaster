@@ -1,5 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-require 'cotta/physical_system'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/cotta'
 
 module BuildMaster
 class PhysicalSystemStub

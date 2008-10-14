@@ -1,8 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'cotta'
-require 'cotta/cotta_file'
-require 'cotta/cotta_dir'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/cotta'
 require 'spec'
 require 'pathname'
 

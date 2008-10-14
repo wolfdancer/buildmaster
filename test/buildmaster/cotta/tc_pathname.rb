@@ -1,7 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
 require 'spec'
-
-require 'cotta'
+require File.dirname(__FILE__) + '/../test'
 
 describe Pathname do
   it 'parent check for unix path' do

@@ -1,8 +1,6 @@
 require 'spec'
 
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'cotta/command_interface'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/cotta'
 
 module BuildMaster
 describe CommandInterface do

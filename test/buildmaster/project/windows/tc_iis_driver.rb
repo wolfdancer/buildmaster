@@ -1,7 +1,6 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
 require 'spec'
-require 'windows/iis_driver'
+require File.dirname(__FILE__) + '/../../test'
+require File.dirname(__FILE__) + '/../../../../lib/buildmaster/windows'
 
 module BuildMaster
 

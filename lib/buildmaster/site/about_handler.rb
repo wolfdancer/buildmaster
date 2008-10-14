@@ -1,8 +1,4 @@
-$:.unshift File.dirname(__FILE__)
-
 require 'webrick'
-require 'file_processor'
-
 module BuildMaster
 
 class AboutHandler < WEBrick::HTTPServlet::AbstractServlet

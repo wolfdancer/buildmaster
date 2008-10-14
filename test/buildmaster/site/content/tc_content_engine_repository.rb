@@ -2,11 +2,7 @@ require 'spec'
 require 'rexml/document'
 require 'rexml/xpath'
 
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', '..', 'lib', 'buildmaster')
-
-require 'site/content_engine_repository'
-require 'cotta'
-require 'cotta/in_memory_system'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 describe ContentEngineRepository do

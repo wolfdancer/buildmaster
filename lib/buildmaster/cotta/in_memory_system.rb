@@ -1,7 +1,4 @@
-$:.unshift File.dirname(__FILE__)
-
 require 'stringio'
-require 'file_not_found_error'
 
 module BuildMaster
 class InMemorySystem

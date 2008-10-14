@@ -1,6 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-require 'auto'
 require 'spec'
+require File.dirname(__FILE__) + '/../../../lib/buildmaster/auto'
 
 module BuildMaster
   describe Classpath do

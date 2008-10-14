@@ -1,8 +1,5 @@
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", '..', "lib", "buildmaster")
-
 require 'spec'
-require 'project'
-require 'cotta'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 

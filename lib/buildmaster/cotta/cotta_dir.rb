@@ -1,6 +1,3 @@
-require 'cotta_file'
-require 'io_chain'
-
 module BuildMaster
 class CottaDir
   include IoChain

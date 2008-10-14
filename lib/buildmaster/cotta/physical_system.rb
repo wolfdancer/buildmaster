@@ -1,10 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
-require 'file_not_found_error'
-require 'command_error'
-require 'command_runner'
-require 'fileutils'
-
 module BuildMaster
 class PhysicalSystem
   def initialize

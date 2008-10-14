@@ -1,13 +1,7 @@
 require 'spec'
 
-$:.unshift File.join(File.dirname(__FILE__), '..', '..', '..', 'lib', 'buildmaster')
-
-require 'site/site_spec'
-require 'site/site'
-require 'site/site_server'
-require 'cotta'
-require 'cotta/in_memory_system'
-require 'project/server_manager'
+require File.dirname(__FILE__) + '/test'
+require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 describe 'site server' do
