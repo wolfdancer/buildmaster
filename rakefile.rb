@@ -1,5 +1,3 @@
-$:.unshift File.dirname(__FILE__)
-
 gem('rake')
 
 Gem::manage_gems

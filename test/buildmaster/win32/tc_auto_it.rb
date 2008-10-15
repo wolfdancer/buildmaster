@@ -1,5 +1,3 @@
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "spec_helper"))
-
 if RUBY_PLATFORM =~ /^rwin/
   require 'selenium/auto_it'
   require 'spec'

@@ -1,11 +1,10 @@
-$:.unshift File.dirname(__FILE__)
+dir = File.dirname(__FILE__)
 
 require 'rubygems'
 Gem::manage_gems
 require 'rake'
-require 'build_master_site'
-require 'lib/buildmaster/cotta'
-require 'lib/buildmaster/project'
+require dir + '/build_master_site'
+require dir + 'lib/buildmaster/auto'
 
 root = BuildMaster::Cotta.parent_of(__FILE__)
 VERSION_NUMBER = BuildMaster::VersionNumberFile.new(root.file('lib/buildmaster/version'))

@@ -1,9 +1,7 @@
-$:.unshift File.join(File.dirname(__FILE__), 'lib', 'buildmaster')
 
-require 'project'
-require 'cotta'
 require 'specs'
 require 'rake'
+require File.dirname(__FILE__) + '/lib/buildmaster/auto'
 
 root = BuildMaster::Cotta.file(__FILE__).parent
 doc_zip = root.file("#{SPEC.name}-doc.tar.zip")
