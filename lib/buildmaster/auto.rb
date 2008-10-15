@@ -17,6 +17,7 @@ require project + '/ci'
 
 auto = dir + '/auto'
 require auto + '/classpath'
+require auto + '/git'
 require auto + '/java'
 require auto + '/javac_ant'
 require auto + '/junit_ant'

@@ -1,3 +1,16 @@
+=begin
+if RUBY_PLATFORM =~ /mswin|mingw/
+  begin
+    require 'win32/open3'
+  rescue LoadError
+    warn "You must 'gem install win32-open3' to use buildmaster on Windows"
+    exit 1
+  end
+else
+  require 'open3'
+end
+=end
+
 module BuildMaster
   
 # Command runner

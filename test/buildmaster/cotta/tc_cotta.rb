@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/../test'
 
 module BuildMaster
 
-describe 'Cotta' do
+describe Cotta do
   before do
     # Given
     @system = InMemorySystem.new
@@ -47,7 +47,7 @@ describe 'Cotta' do
   end
   
   it 'create parent directory directly from __FILE__' do
-    actual = BuildMaster::Cotta.parent_of(__FILE__)
+    actual = BuildMaster::Cotta.parent_dir(__FILE__)
     actual.name.should == 'cotta'
   end
   
