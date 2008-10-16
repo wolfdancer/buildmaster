@@ -12,5 +12,8 @@ module BuildMaster
       Dir.chdir('/') do
         git = Git.new(current_dir)
         git.status.should_not be_empty              end
-    end  end
+    end
+    
+    it 'should issue proper commands' do
+          end  end
 end
