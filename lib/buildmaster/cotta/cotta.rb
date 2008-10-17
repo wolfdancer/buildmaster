@@ -24,6 +24,10 @@ class Cotta
   def shell(command_line, &block)
     @system.shell(command_line, &block)
   end
+  
+  def pwd
+    dir(@system.pwd)
+  end
 
   # Starts the process.  Unlike shell method, this method does not
   # collect the output, thus suitable for starting a server in Ruby

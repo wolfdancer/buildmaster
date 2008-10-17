@@ -185,4 +185,3 @@ RESULT
     end
   end
 end
-$:.shift

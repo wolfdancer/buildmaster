@@ -74,6 +74,22 @@ class PhysicalSystemStub
     @system.copy_dir(relative_from_tmp(source), relative_from_tmp(target))
   end
   
+  def chdir(path, &block)
+    @system.chdir(relative_from_tmp(path), &block)
+  end
+  
+  def pwd
+    path = @system.pwd
+    candidate = relative_from_tmp(Pathname.new('/')).expand_path.to_s
+    if (path.index(candidate) == 0)
+      result = path[candidate.length, path.length - candidate.length]
+    else
+      candidate = relative_from_tmp(Pathname.new('.')).expand_path.to_s
+      result = path[candidate.length + 1, path.length - candidate.length - 1]
+    end
+    result
+  end
+  
   private
   def relative_from_tmp(pathname)
     tmp_pathname = nil

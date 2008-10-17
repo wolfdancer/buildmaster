@@ -76,4 +76,3 @@ RESULT
   end
 
 end
-$:.shift

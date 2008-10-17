@@ -3,7 +3,7 @@ require 'stringio'
 module BuildMaster
 class InMemorySystem
   
-  attr_reader :executed_commands
+  attr_reader :executed_commands, :pwd
 
   def initialize
     @executed_commands = []
@@ -116,6 +116,20 @@ class InMemorySystem
   
   def to_s
     return 'InMemorySystem'
+  end
+  
+  def chdir(path)
+    last_pwd = @pwd
+    @pwd = path.to_s
+    result = 0
+    if (block_given?)
+      begin
+        result = yield
+      ensure
+        @pwd = last_pwd
+      end
+    end
+    result
   end
   
   private

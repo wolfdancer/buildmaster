@@ -12,5 +12,3 @@ describe PhysicalSystem, 'work with CottaDir' do
   
 end
 end
-
-$:.shift

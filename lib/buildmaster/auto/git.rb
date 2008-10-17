@@ -26,7 +26,7 @@ module BuildMaster
     
     private
     def command(command)
-      Dir.chdir(@work_dir.path) do
+      @work_dir.chdir do
         @work_dir.cotta.shell("git #{command}")
       end
     end

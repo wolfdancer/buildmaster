@@ -135,6 +135,10 @@ class CottaDir
       candidate
     end
   end
+  
+  def chdir(&block)
+    @system.chdir(@path, &block)
+  end
 
   def ==(other)
     return @path == other.path && @system == other.system

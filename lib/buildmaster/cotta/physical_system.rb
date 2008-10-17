@@ -73,6 +73,14 @@ class PhysicalSystem
   def move_dir(source, target)
     FileUtils.mv(source, target)
   end
+  
+  def chdir(target, &block)
+    Dir.chdir(target, &block)
+  end
+  
+  def pwd
+    Dir.pwd  
+  end
 
   def ==(other)
     other.class == PhysicalSystem

@@ -36,4 +36,3 @@ module BuildMaster
     end
   end
 end
-$:.shift

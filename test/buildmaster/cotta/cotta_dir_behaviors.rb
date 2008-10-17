@@ -180,6 +180,21 @@ module BuildMaster
       target.dir('out').should_not be_exist
       target.dir('in').should be_exist
     end
+    
+    it 'should support changing directory' do
+      dir = @dir.dir('one/two')
+      file = @dir.file('marker').save('marker')
+      dir.mkdirs
+      result = dir.chdir
+      result.should == 0
+      current = dir.cotta.pwd
+      value = @dir.chdir do
+        dir.cotta.pwd.should == @dir
+        'value'
+      end
+      value.should == 'value'
+      dir.cotta.pwd.should == current
+    end
 
   end
 end
