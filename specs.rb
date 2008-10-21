@@ -4,7 +4,7 @@ require 'rubygems'
 Gem::manage_gems
 require 'rake'
 require dir + '/build_master_site'
-require dir + 'lib/buildmaster/auto'
+require dir + '/lib/buildmaster/auto'
 
 root = BuildMaster::Cotta.parent_of(__FILE__)
 VERSION_NUMBER = BuildMaster::VersionNumberFile.new(root.file('lib/buildmaster/version'))

@@ -9,7 +9,7 @@ h1. Site Publishing
 
 h2. Web Page Design References
 
-* "CSS (Cascading Style Sheets)":http://www.w3schools.com/css/css_reference.asp
+* "CSS":http://www.w3schools.com/css/css_reference.asp
 * "Color for Coders":http://www.sitepoint.com/article/color-for-coders: Color and Designer for the non-designer
 * "Color Lab":http://www.visibone.com/colorlab/big.html: Pick color made easy
 * "A List Apart":http://alistapart.com/: The way that CSS is supposed to be.

@@ -5,7 +5,7 @@ require File.dirname(__FILE__) + '/lib/buildmaster/auto'
 
 root = BuildMaster::Cotta.file(__FILE__).parent
 doc_zip = root.file("#{SPEC.name}-doc.tar.zip")
-svn = BuildMaster::SvnDriver.from_path(root)
+git = BuildMaster::Git.new(root)
 
 release = BuildMaster::Release.new
 release.task('version') do

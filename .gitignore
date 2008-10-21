@@ -1,4 +1,6 @@
+*.gem
 .settings
+build
 buildmaster.iws
 buildmaster.xml
 tmp

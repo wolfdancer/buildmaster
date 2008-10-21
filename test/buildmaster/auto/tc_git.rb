@@ -22,9 +22,11 @@ module BuildMaster
       system.output_for_command('git add .', 'add output')
       system.output_for_command("git add #{work.file('file.txt')}", 'add output')
       system.output_for_command("git commit -m \"comment\"", 'commit output')
+      system.output_for_command("git tag tag", 'tag output')
       git = Git.new(work)
       git.pull
       git.add
       git.add(work.file('file.txt'))
-      git.commit('comment')    end  end
+      git.commit('comment')
+      git.tag('tag')    end  end
 end

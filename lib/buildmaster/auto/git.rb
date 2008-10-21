@@ -24,6 +24,10 @@ module BuildMaster
       command("commit -m \"#{comment}\"")
     end
     
+    def tag(name)
+      command("tag #{name}")
+    end
+    
     private
     def command(command)
       @work_dir.chdir do
