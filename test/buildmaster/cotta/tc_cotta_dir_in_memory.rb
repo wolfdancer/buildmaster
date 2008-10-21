@@ -11,7 +11,7 @@ module BuildMaster
     def create_system
       @system = InMemorySystem.new
     end
-
+    
     it 'dir should not be equal if system different' do
       (BuildMaster::CottaDir.new(InMemorySystem.new, Pathname.new('dir')) == @dir).should == false
     end

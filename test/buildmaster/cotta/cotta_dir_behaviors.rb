@@ -8,6 +8,9 @@ module BuildMaster
       create_system
       @dir = BuildMaster::CottaDir.new(@system, Pathname.new('dir'))
     end
+    
+    after do
+      @dir.chdir    end
 
     it 'load dir with basic information' do
       @dir.name.should == 'dir'
