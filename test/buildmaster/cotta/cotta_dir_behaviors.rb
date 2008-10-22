@@ -6,11 +6,13 @@ module BuildMaster
   describe 'CottaDirBehaviors', :shared=>true do
     before do
       create_system
-      @dir = BuildMaster::CottaDir.new(@system, Pathname.new('dir'))
+      @root = BuildMaster::CottaDir.new(@system, Pathname.new('.'))
+      @dir = @root.dir('dir')
+      @current = Dir.pwd
     end
     
     after do
-      @dir.chdir    end
+      Dir.chdir @current    end
 
     it 'load dir with basic information' do
       @dir.name.should == 'dir'
@@ -191,8 +193,8 @@ module BuildMaster
       result = dir.chdir
       result.should == 0
       current = dir.cotta.pwd
-      value = @dir.chdir do
-        dir.cotta.pwd.should == @dir
+      value = @root.chdir do
+        dir.cotta.pwd.should == @root
         'value'
       end
       value.should == 'value'

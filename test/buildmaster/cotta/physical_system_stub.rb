@@ -6,7 +6,7 @@ class PhysicalSystemStub
 
   def initialize
     @executed_commands = Array.new
-    tmp_path = File.join(File.dirname(__FILE__), '..', '..', '..', 'tmp')
+    tmp_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'tmp'))
     @system = PhysicalSystem.new
     ensure_clean_directory(tmp_path)
     Dir.mkdir(File.join(tmp_path, 'current'))
@@ -85,7 +85,11 @@ class PhysicalSystemStub
       result = path[candidate.length, path.length - candidate.length]
     else
       candidate = relative_from_tmp(Pathname.new('.')).expand_path.to_s
-      result = path[candidate.length + 1, path.length - candidate.length - 1]
+      if candidate == path
+        result = '.'
+      else
+        result = path[candidate.length + 1, path.length - candidate.length - 1]
+      end
     end
     result
   end
