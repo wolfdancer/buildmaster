@@ -19,11 +19,11 @@ release.task("rake") do
 #  rake.options.trace = true
 #  rake.run
 end
-release.task('commit') {svn.commit('committing before release')}
+release.task('commit') {git.commit('committing before release')}
 release.task('tagging') do
   tag = "buildmaster-#{SPEC.version}"
   puts "tagging with #{tag}"
-  svn.tag(tag)
+  git.tag(tag)
 end
 
 release.task("doc") do
@@ -34,8 +34,8 @@ end
 release.task("upload") do
   gem = "#{SPEC.name}-#{SPEC.version}"
   target_path = "/var/www/gforge-projects/buildmaster/builds/"
-  BuildMaster::PscpDriver.new("#{svn.user}@buildmaster.rubyforge.org").copy(root.file("#{gem}.gem").to_s, "#{target_path}#{gem}.gem")
-  BuildMaster::PscpDriver.new("#{svn.user}@buildmaster.rubyforge.org").copy(doc_zip.to_s, "#{target_path}#{SPEC.name}-#{SPEC.version}-doc.tar.zip")
+  BuildMaster::PscpDriver.new("wolfdancer@buildmaster.rubyforge.org").copy(root.file("#{gem}.gem").to_s, "#{target_path}#{gem}.gem")
+  BuildMaster::PscpDriver.new("wolfdancer@buildmaster.rubyforge.org").copy(doc_zip.to_s, "#{target_path}#{SPEC.name}-#{SPEC.version}-doc.tar.zip")
 end
 
 release.command(ARGV)
