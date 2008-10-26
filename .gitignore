@@ -1,4 +1,5 @@
 *.gem
+BuildMaster-doc.tar.zip
 .settings
 build
 buildmaster.iws
