@@ -12,6 +12,10 @@ module BuildMaster
     def pull
       command('pull')
     end
+
+    def push(*argv)
+      command("push #{argv.join(' ')}")
+    end
     
     def add(entry=nil)
       path = '.'
@@ -26,6 +30,10 @@ module BuildMaster
     
     def tag(name)
       command("tag #{name}")
+    end
+
+    def push(target='origin', source='master')
+      command("push #{target} #{source}")
     end
     
     private

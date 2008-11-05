@@ -5,13 +5,15 @@ module BuildMaster
     it 'should take a directory as the working directory' do
       current_dir = Cotta.parent_dir(__FILE__)
       git = Git.new(current_dir)
-      git.work_dir.should == current_dir    end
+      git.work_dir.should == current_dir
+    end
     
     it 'should change directory and run command' do
       current_dir = Cotta.parent_dir(__FILE__)
       Dir.chdir('/') do
         git = Git.new(current_dir)
-        git.status.should_not be_empty              end
+        git.status.should_not be_empty        
+      end
     end
     
     it 'should issue proper commands' do
@@ -23,10 +25,14 @@ module BuildMaster
       system.output_for_command("git add #{work.file('file.txt')}", 'add output')
       system.output_for_command("git commit -m \"comment\"", 'commit output')
       system.output_for_command("git tag tag", 'tag output')
+      system.output_for_command("git push origin master", "push output")
       git = Git.new(work)
       git.pull
       git.add
       git.add(work.file('file.txt'))
       git.commit('comment')
-      git.tag('tag')    end  end
+      git.tag('tag')
+      git.push
+    end
+  end
 end
