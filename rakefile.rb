@@ -39,6 +39,8 @@ task :local_install => [:package]
 
 # ??? if we use the rakt gem task, it will somehow be built multiple times and fail???
 task :package do
+  tmp = BuildMaster::Cotta.parent_dir(__FILE__).dir("test/tmp")
+  tmp.delete if tmp.exists?
   Gem::manage_gems
   Gem::Builder.new(SPEC).build
 end
