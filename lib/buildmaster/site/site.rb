@@ -50,7 +50,6 @@ module BuildMaster
     end
     
     def server(*args)
-require 'site_server'
       @server = SiteServer.new(@spec, *args)
       ['INT', 'TERM'].each { |signal|
            trap(signal){ @server.stop} 
