@@ -10,6 +10,9 @@ module BuildMaster
       @prod.classpath = Classpath.new(root)
       @test = ProjectInfo.new(self)
       @test.classpath = Classpath.new(root)
+      prod.src=root.dir('src')
+      test.src=root.dir('test')
+      self.output=root.dir('output')
       if block_given?
         yield self
       end

@@ -5,6 +5,17 @@ require 'spec'
 module BuildMaster
   describe JavaProject do
     include TempDirs
+
+    it 'should have default values' do
+      current = current(__FILE__)
+      project = JavaProject.new(current)
+      project.output.should == current.dir('output')
+      project.src.should == current.dir('src')
+      project.test.src.should == current.dir('test')
+      project.prod.output.should == current.dir('output/prod')
+      project.test.output.should == current.dir('output/test')
+    end
+
     it 'should take path as well as directory' do
       current = current(__FILE__)
       project = JavaProject.new(current) do |p|
