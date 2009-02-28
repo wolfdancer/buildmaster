@@ -128,7 +128,8 @@ RESULT
       project.src = report.dir('src')
       project.output = report.dir('output')
       junit = JUnitAnt.new(report, project).for_test('All')
-      cobertura = report.file('cobertura.jar')
+      cobertura = report.file('cobertura.jar').save
+      cobertura.parent.dir('lib').mkdirs
       junit.with_coverage(cobertura)
       junit.generate(report.file('xml.xml'))
       report.file('xml.xml').load.should == <<RESULT

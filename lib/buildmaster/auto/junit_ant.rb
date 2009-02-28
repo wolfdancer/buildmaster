@@ -174,6 +174,9 @@ RESULT
       @project = project
       @instrumented_dir = @project.output.dir('instrumented')
       @datafile = @project.output.file('cobertuna.ser')
+      raise "#{jar} does not exist" unless jar.exists?
+      lib = jar.parent.dir('lib')
+      raise "#{ lib } should contain library used by cobertuna" unless lib.exists?
     end
 
     def task_def

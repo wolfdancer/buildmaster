@@ -67,6 +67,7 @@ class CottaFile
   
   def save(content = '')
     write {|file| file.printf content.to_s}
+    self
   end
   
 # Calls open with 'w' argument and makes sure that the
