@@ -102,6 +102,12 @@ module BuildMaster
       junit
     end
 
+    def javadoc(report_dir)
+      javadoc = JavaDocAnt.new(report_dir)
+      javadoc.src = prod.src
+      javadoc
+    end
+
     def make(buildfile = nil)
       javac(buildfile).each {|javac|  javac.compile}
     end

@@ -3,13 +3,14 @@ require dir + '/../test'
 require 'spec'
 
 module BuildMaster
-  describe JavaProject do
+  describe JavaProject  do
     include TempDirs
     it 'should be able to make' do
       tmp = setup_tmp
       tmp1 = tmp.dir('p1')
       project = JavaProject.new(tmp) do |p|
         p.src = current(__FILE__).dir('javac/src')
+        p.test.src = nil
         p.output = tmp1
       end
       project.make
@@ -19,6 +20,7 @@ module BuildMaster
       tmp2 = tmp.dir('p2')
       project2 = JavaProject.new(tmp) do |p|
         p.src = current(__FILE__).dir('javac/src2')
+        p.test.src = nil
         p.add_project project
         p.output = tmp2
       end
@@ -41,6 +43,17 @@ module BuildMaster
       tmp.file('test/org/rubyforge/buildmaster/javac/Two.class').should be_exist
     end
 
+    it 'should generate javadoc' do
+      tmp = setup_tmp
+      project = JavaProject.new(tmp) do |p|
+        p.src = current(__FILE__).dir('javac/src')
+        p.test.src = nil
+        p.output = tmp
+      end
+      project.javadoc(tmp).run
+      tmp.file('index.html').should be_exist
+    end
+
     it 'should be able to generate classpath element for ANT build file' do
       current = current(__FILE__)
       output = current.dir('output')
@@ -61,6 +74,7 @@ RESULT
       project = JavaProject.new(current) do |p|
         p.output = output
         p.src = current.dir('javac/src')
+        p.test.src = nil
         p.resource = current.dir('javac/src')
       end
       project.make
@@ -75,6 +89,7 @@ RESULT
       project = JavaProject.new(current) do |p|
         p.output = output
         p.src = current.dir('javac/src')
+        p.test.src = nil
       end
       project.prod.output.mkdirs
       project.test.output.mkdirs
@@ -84,6 +99,5 @@ RESULT
       dist.file('package.jar').should be_exist
       dist.file('package-src.zip').should be_exist
     end
-
   end
 end

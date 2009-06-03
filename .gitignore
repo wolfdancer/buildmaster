@@ -1,5 +1,5 @@
 *.gem
-.idea/workspace.xml
+.idea/*
 BuildMaster-doc.tar.zip
 .settings
 build
