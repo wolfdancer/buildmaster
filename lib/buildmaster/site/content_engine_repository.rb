@@ -31,7 +31,7 @@ end
 
 module ContentEngine
 #todo match only beginning of the file
-@@TEXTILE_REGX = /---(-)*\n(.*)\n(-)*---\n/
+@@TEXTILE_REGX = /===(=)*\n(.*)\n(=)*===\n/
   def process_content_with_title(full_content)
     match_result = @@TEXTILE_REGX.match(full_content)
     title = ''
